@@ -82,7 +82,7 @@
 
 [data-device="mobile"] #portfolio-container .portfolio .column-featured{
     overflow: hidden;
-    height: 397px;
+    height: auto;
 }
 
 [data-device="mobile"] #portfolio-container .portfolio .column-text{

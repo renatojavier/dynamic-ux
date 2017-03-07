@@ -1,5 +1,6 @@
 body{
 	overflow-y: scroll;
+	background-color: rgb(215, 45, 46);
 }
 
 [data-device] .container .inner{
@@ -21,8 +22,12 @@ body{
 	height: 100px;
 
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-	background-color: #d72d2e;
 	z-index: 99999;
+}
+
+[data-device] #top-bar,
+[data-device] #top-bar #switcher-container{
+	background-color: rgba(215, 45, 46, 0.95);
 }
 
 [data-device] #top-bar > .inner{

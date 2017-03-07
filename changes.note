@@ -1,0 +1,50 @@
+Changes:
+-+ Everything in the top bar needs to be vertically centered on desktop in firefox
+
+-+ The switches do not highlight on dekstop, do not work properly on mobile
+
+-+ Switches link need to smooth scroll, not jump and they should align the top separation line to the section
+
+-+ The text in the More Info buttons is not centered
+
+-+ There are no chevrons anywhere on desktop
+
+-+ Content area of 1000 px wide needs left and right margins or padding of 40 px
+
+-? Top bar content is extending beyond the 1000px wide area
+
+-+ Need white space on bottom of index page like other pages
+
+-+ 2px horizontal separation line needs to be reversed with lighter line below on index (this is already correct on subpages)
+
+-+ Move Product and Description and text underneath over 40 px to the right on desktop
+
+-+ Top bar should be 95% opacity on sub pages
+
+-? Pages should not be scalable on mobile!
+
+-? Tools icons are extending beyond its container on mobile
+
+-+ Need white space on bottom of index on mobile
+
+-+ Monitor_2.png is cut off on mobile index
+
+- Pages do not load scrolled to top on mobile
+
+- Gaps between switch white fill and border on mobile, maybe on desktop too?
+
+- Switch top bar on mobile should be z indexed below the main top bar, it is currently above
+
+- Heading text "The best and easiest to use free Apps for Churches" and matching headings for other 2 blocks are not centered on mobile, they are too far left
+
+- 2nd Paw print not lined up on mobile Phomio
+
+
+
+Extra payment changes +$35:
+- Maybe making the pages responsive instead of device detection will fix a few of the above issues regarding scaling and loading half way down the page? Still only desktop and mobile view, with 799 width break point. You can use the same css for mobile that we have now
+- Down state on buttons should not move down 2px, keep it where it is
+- Use Retina graphics on mobile index page
+- add toms Phomio styles via html
+- copy in product selector from existing files
+- copy in video player from existing files that scales with mobile, autoplay muted by default, no autoplay on mobile

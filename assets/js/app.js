@@ -5,6 +5,17 @@ window.app = {
 		window.preload_flag = true;
 		this.device_detection();
 		this.switcher.initialize();
+		this.loadMozCSS();
+		this.counterFOUC();
+	},
+
+	counterFOUC : function(){
+		document.body.style.display = 'block';
+	},
+
+	loadMozCSS : function(){
+		if( this.device.phone() === null )
+			$('body').append('<link rel="stylesheet" type="text/css" href="assets/css/moz.css">');
 	},
 
 	device_detection : function( self ){

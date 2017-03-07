@@ -6,13 +6,6 @@
 	box-sizing: border-box;
 }
 
-/*-- removes fouc --*/
-html{
-	-webkit-visibility: visible;
-	visibility: visible;
-	background-color: #ccc;
-}
-
 body{
 	position: relative;
 	padding: 0;
@@ -45,4 +38,9 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 
 .section.alpha{
 	border-top: 0 none !important;
+}
+
+[data-device="desktop"] .container:not(#top-bar) .inner{
+	padding-left: 40px;
+	padding-right: 40px;
 }
