@@ -10,7 +10,18 @@ window.app = {
 	},
 
 	counterFOUC : function(){
-		document.body.style.display = 'block';
+		var raf;
+
+		function watch(){
+			console.log('Monitoring...');
+			raf = window.requestAnimationFrame(watch);
+			if( $('#stylesheet-mobile').length ){
+				document.body.style.display = 'block';
+				window.cancelAnimationFrame(raf);
+			}
+		}
+
+		watch();
 	},
 
 	loadMozCSS : function(){
@@ -30,7 +41,7 @@ window.app = {
 		});
 
 		if( this.device.phone() !== null )
-			$('body').append('<link rel="stylesheet" type="text/css" href="assets/css/'+( $('html').data('portfolio') )+'-mobile.css">');
+			$('body').append('<link rel="stylesheet" id="stylesheet-mobile" type="text/css" href="assets/css/'+( $('html').data('portfolio') )+'-mobile.css">');
 		return;
 	},
 
