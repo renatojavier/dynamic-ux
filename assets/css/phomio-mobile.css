@@ -1,0 +1,300 @@
+[data-device="mobile"] .container .inner{
+	width: 100%;
+	margin: 0 auto;
+}
+
+/*--
+ - Top bar
+ --*/
+[data-device="mobile"] #top-bar{
+	height: 50px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+}
+
+[data-device="mobile"] #top-bar > .inner,
+[data-device="mobile"] #top-bar > .inner > *{
+	display: block;
+	height: 50px;
+}
+
+/*-- site logo group --*/
+[data-device="mobile"] #top-bar figure#site-logo-group{
+    width: 85px;
+	margin: 0;
+}
+
+[data-device="mobile"] #top-bar #site-logo-group img{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+[data-device="mobile"] #top-bar #site-logo-group .fa{
+	font-size: 40px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+[data-device="mobile"] #top-bar #site-logo-group img#site-logo{
+	margin-top: 2px;
+	width: 46px;
+}
+
+[data-device="mobile"] #top-bar #site-logo-group,
+[data-device="mobile"] #top-bar #portfolio-name{
+	float: left;
+	position: relative;
+	z-index: 9999;
+}
+
+/*-- top-bar portfolio name --*/
+[data-device="mobile"] #top-bar #portfolio-name{
+    font-size: 20px;
+    text-shadow: 0 1px 2px black;
+    text-align: center;
+    width: calc(100% - 85px);
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding-left: 0;
+    text-indent: -90px;
+}
+
+
+/*-- top-bar switcher --*/
+[data-device="mobile"] #top-bar #switcher-container{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 62px;
+    background-color: #d72d2e;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+[data-device="mobile"] #top-bar #switcher-inner{
+	-webkit=transform: scale(0.5) translateX(13%) translateY(10px);
+	transform: scale(0.5) translateX(13%) translateY(10px);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+/*--
+ - Page content
+ --*/
+[data-device="mobile"] #page-content{
+	background-color: #d72d2e;
+	margin-top: 112px;
+	color: white;
+	overflow-x: hidden;
+}
+
+
+[data-device="mobile"] #page-content .section > .inner{
+	width: 100%;
+	margin: 0 auto;
+    padding: 20px 25px 40px;
+}
+
+[data-device="mobile"] #page-content .section-title{
+    font-size: 17px;
+    text-shadow: 0 1px 3px black;
+}
+
+[data-device="mobile"] #page-content .section-title-centered{
+    font-size: 26px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+[data-device="mobile"] #page-content .textual-content{
+    list-style-type: none;
+    font-size: 12px;
+    line-height: 130%;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+[data-device="mobile"] #page-content .section-diagram{
+
+}
+
+[data-device="mobile"] #page-content .section-diagram img{
+
+}
+
+/*-- section alpha --*/
+
+[data-device="mobile"] #page-content .section.alpha > .inner{
+    padding: 20px 5px 10px 25px;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram{
+	margin-top: 10px;
+	text-align: left;
+}
+
+[data-device="mobile"] #page-content .section.alpha .textual-content{
+	margin-top: 10px;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_fishing_lure{
+	width: 75px;
+	margin-left: 0;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_arrow_blue_right{
+	width: 50px;
+	margin-top: 10px;
+    margin-left: 0;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_tazbox{
+	width: 180px;
+    margin-left: -6px;
+    margin-right: -20px;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_camera{
+	width: 120px;
+	margin-top: 5px;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_arrow_blue_up_left,
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_arrow_blue_down_left{
+	width: 50px;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_arrow_blue_up_left{
+	margin-left: 5px;
+    margin-top: -130px;
+}
+
+[data-device="mobile"] #page-content .section.alpha .section-diagram #img_a_arrow_blue_down_left{
+    margin-top: -115px;
+    margin-left: -11px;
+}
+
+/*-- section beta --*/
+[data-device="mobile"] #page-content .section.beta .inner{
+	padding-top: 15px;
+}
+
+[data-device="mobile"] #page-content .section-diagram{
+	margin-bottom: 30px !important;
+}
+
+/*-- design --*/
+[data-device="mobile"] #page-content .section.beta{}
+
+[data-device="mobile"] #page-content .section.beta #img_a_church{
+	width: 92px;
+}
+
+[data-device="mobile"] #page-content .section.beta #img_a_phone_3{
+	width: 88px;
+}
+
+[data-device="mobile"] #page-content .section.beta #img_a_phone_1,
+[data-device="mobile"] #page-content .section.beta #img_a_phone_2{
+	display: none;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-design img{
+	margin: 0 10px;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-design {
+    margin-bottom: 30px;
+}
+
+/*-- refinement --*/
+[data-device="mobile"] #page-content .section.beta #img_b_cc_admin_1{
+	width: 175px;
+}
+
+[data-device="mobile"] #page-content .section.beta #img_b_arrow_blue_down{
+	width: 30px;
+	display: block !important;
+	margin: 15px auto;
+}
+
+[data-device="mobile"] #page-content .section.beta #img_b_cc_admin_2{
+	width: 173px;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-editor{
+    -webkit-transform: scale(0.375) translateX(-88%);
+    transform: scale(0.5) translateX(-53%);
+    margin-top: -35px;
+    margin-bottom: -25px !important;
+    width: 575px;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details{
+    -webkit-transform: scale(0.5) translateX(-67%);
+    transform: scale(0.5) translateX(-67%);
+    margin-top: -100px;
+    margin-bottom: -115px !important;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(2){
+	display: none;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(3) p{
+	font-size: 15px;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(3), [data-device] #page-content .section.beta .diagram-details-column:nth-of-type(4){
+	padding-left: 0;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(5) p{
+	display: none;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(3) .customer-group-details:nth-of-type(1) {
+    margin-top: 16px;
+}
+
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(3) .customer-group-details:nth-of-type(2), [data-device] #page-content .section.beta .diagram-details-column:nth-of-type(3) .customer-group-details:nth-of-type(3) {
+    margin-top: 73px;
+}
+
+#img_b_dog_example{
+	width: 137px;
+}
+
+/*-- section charlie --*/
+[data-device="mobile"] #page-content .section.charlie .section-title-centered{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+[data-device="mobile"] #page-content .section.charlie .inner{
+	clear: both;
+}
+
+[data-device="mobile"] #page-content .section.charlie .section-title{
+	margin-top: 0;
+}
+
+[data-device="mobile"] #page-content .section.charlie #img_c_placeholder_lure_select{
+	width: 242px;
+    margin-top: 25px;
+}
+
+[data-device="mobile"] #page-content .section.charlie #img_c_placeholderphomio_photo{
+	width: 210px;
+}
+
+[data-device="mobile"] #page-content .section.charlie #img_c_phomio_logo{
+	width: 160px;
+}
+
+[data-device="mobile"] #page-content .section.charlie #img_c_placeholderphomio_photo,
+[data-device="mobile"] #page-content .section.charlie #img_c_phomio_logo{
+	margin-top: 50px;
+}

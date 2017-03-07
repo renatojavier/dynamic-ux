@@ -1,0 +1,65 @@
+4 pages, each page needs to detect and display a desktop view vs. a mobile view. There are ONLY 2 views, mobile and desktop. iPads and tablets always display the desktop view. 
+
+The top bar is fixed and always remains at the top while the page content scrolls underneath. Top Bar is 90% opacity and there is a drop shadow that is positioned straight down.
+
+On mobile index: The top area under where the top bar on mobile where the text is "We love creating products that combine automated processes in the background, resulting in an amazingly easy to use and enjoyable product for the end user." scrolls with the page normally.
+
+On mobile other pages, the area under the top bar that contains the Switch is also fixed.
+
+- The switch in the top bar of each page should be in its normal state on first page load. When the user goes to the Complexity section the Complex side of the switch highlights. Or when the user clicks complex, the page scrolls to that section. Vice versa for the Simple Section.
+
+- Top bar is supposed to always be 100 px tall on desktop, it should not change size. It is always supposed to be 50px tall on mobile. It should match the mockups exactly.
+
+- Content of Desktop site is set for 1000 px width but the colors and horizontal lines should extend across the desktop page 100%. The content remains in a 1000px wide area on desktop
+
+- Mobile is designed for 320 px width.
+
+- Please pay special attention to the upper drop shadows on cc_phone.png and wmb_phone.png on the mobile view!
+
+- More Info buttons need a hover and down state. Hover state the button files in white, with the text the color of the background (blue, red, yellow) Down state the button moves down 2px and gains an inner drop shadow. The down state must work on mobile
+
+- All shadows on text are always straight down, never left or right
+
+- Each "block" needs to be separated by 2 adjacent horizontal 1px lines. The top line is color 808080, the bottom line is d6d6d6
+
+- Please include extra white block below the other 3 blocks
+
+- All fonts should be helvetica
+
+- Some text may not be exact in the mockups. But the text in the Text.txt file is correct
+
+- Some images may differ slightly than the mockups
+
+---
+
+    <div style="
+    position: fixed;
+    width: 262px;
+    height: 46px;
+    /* background: red; */
+    top: 412px;
+    left: 511px;
+    opacity: 0.3;
+    border-radius: 10px;
+    color: #d72d2e;
+"></div>
+
+---
+
+<!-- Google optimized css delivery method-->
+		<script>
+			var loadDeferredStyles = function() {
+				var addStylesNode = document.getElementById("deferred-styles")
+				,	replacement = document.createElement("div");
+
+				replacement.innerHTML = addStylesNode.textContent;
+				document.body.appendChild(replacement)
+				addStylesNode.parentElement.removeChild(addStylesNode);
+			};
+
+			var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+			webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+			if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+			else window.addEventListener('load', loadDeferredStyles);
+		</script>

@@ -1,0 +1,48 @@
+@import "local-fonts/monaco/stylesheet.css";
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*-- removes fouc --*/
+html{
+	-webkit-visibility: visible;
+	visibility: visible;
+	background-color: #ccc;
+}
+
+body{
+	position: relative;
+	padding: 0;
+	margin: 0;
+	clear: both;
+	float: none;
+	background: white;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li{
+	font-family: Helvetica;
+	font-weight: normal;
+}
+
+.hidden{
+	display: none !important;
+	-webkit-visibility: hidden;
+	visibility: hidden;
+}
+
+.extra-section{
+	position: relative;
+    min-height: 200px;
+    background-color: white;
+}
+
+#page-content .textual-content-centered{
+	padding-left: 0 !important;
+}
+
+.section.alpha{
+	border-top: 0 none !important;
+}
