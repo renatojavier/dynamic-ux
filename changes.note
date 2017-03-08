@@ -35,9 +35,9 @@ Changes:
 
 - Switch top bar on mobile should be z indexed below the main top bar, it is currently above
 
-- Heading text "The best and easiest to use free Apps for Churches" and matching headings for other 2 blocks are not centered on mobile, they are too far left
+-+ Heading text "The best and easiest to use free Apps for Churches" and matching headings for other 2 blocks are not centered on mobile, they are too far left
 
-- 2nd Paw print not lined up on mobile Phomio
+-+ 2nd Paw print not lined up on mobile Phomio
 
 
 

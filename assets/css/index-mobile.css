@@ -133,6 +133,10 @@
 	margin-top: -10px;
 }
 
+[data-device="mobile"] #portfolio-container .portfolio-cc .column-text .cta-more-info{
+	margin-bottom: 20px;
+}
+
 /*-- portfolio phomio --*/
 [data-device="mobile"] #portfolio-container .portfolio-phomio .column-featured-company{
 	width: 100%;

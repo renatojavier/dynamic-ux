@@ -263,6 +263,10 @@
     margin-top: 73px;
 }
 
+[data-device="mobile"] #page-content .section.beta .diagram-details-column:nth-of-type(5) #img_b_paw_print_031{
+	margin-top: 115px;
+}
+
 #img_b_dog_example{
 	width: 137px;
 }

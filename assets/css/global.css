@@ -44,3 +44,18 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 	padding-left: 40px;
 	padding-right: 40px;
 }
+
+#site-logo-group > a{
+    height: 100%;
+    display: block;
+}
+
+[data-device="desktop"] #top-bar .inner,
+[data-device="desktop"] #page-content .section > .inner{
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+[data-device="desktop"] #top-bar #site-logo-group .fa{
+	margin-left: -15px;
+}
