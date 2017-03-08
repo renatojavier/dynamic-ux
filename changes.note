@@ -31,7 +31,7 @@ Changes:
 
 -+ Pages do not load scrolled to top on mobile
 
-- Gaps between switch white fill and border on mobile, maybe on desktop too?
+-+ Gaps between switch white fill and border on mobile, maybe on desktop too?
 
 - Switch top bar on mobile should be z indexed below the main top bar, it is currently above
 

@@ -8,7 +8,7 @@
  --*/
 [data-device="mobile"] #top-bar{
 	height: 50px;
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
 [data-device="mobile"] #top-bar > .inner,
@@ -60,17 +60,24 @@
 
 
 /*-- top-bar switcher --*/
-[data-device="mobile"] #top-bar #switcher-container{
+[data-device="mobile"] .switcher-desktop{
+	display: none !important;
+}
+
+[data-device="mobile"] .switcher-mobile{
+	display: block !important;
     position: fixed;
     top: 50px;
     left: 0;
     width: 100%;
     height: 62px;
-    background-color: #00c0ff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 192, 255, 0.95);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+    z-index: 1;
 }
 
-[data-device="mobile"] #top-bar #switcher-inner{
+[data-device="mobile"] #switcher-inner a{ text-decoration: none; }
+[data-device="mobile"] #switcher-inner{
 	-webkit-transform: scale(0.5) translateX(13%) translateY(10px);
 	transform: scale(0.5) translateX(13%) translateY(10px);
 	-webkit-backface-visibility: hidden;

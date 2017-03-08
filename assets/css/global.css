@@ -63,3 +63,7 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 [data-device="mobile"] #page-content .section.beta .section-content-tools{
 	height: 265px;
 }
+
+[data-device="mobile"] #top-bar .inner{
+	min-height: 50px;
+}

@@ -78,6 +78,11 @@ body{
 
 
 /*-- top-bar switcher --*/
+[data-device] .switcher-mobile{
+	display: none;
+}
+
+[data-device] #switcher-inner,
 [data-device] #top-bar #switcher-inner{
 	position: relative;
     width: 372px;
@@ -93,11 +98,13 @@ body{
     float: right;
 }
 
+[data-device] #switcher-inner .active-switch,
 [data-device] #top-bar #switcher-inner .active-switch{
 	background-color: white;
 	color: #00c0ff;
 }
 
+[data-device] #switcher-inner a,
 [data-device] #top-bar #switcher-inner a{
     display: block;
     width: 50%;
@@ -107,10 +114,12 @@ body{
     color: white;
 }
 
+[data-device] #switcher-inner a:first-of-type,
 [data-device] #top-bar #switcher-inner a:first-of-type{
 	border-right: 2px solid white;
 }
 
+[data-device] #switcher-inner a:last-of-type,
 [data-device] #top-bar #switcher-inner a:last-of-type{
 	border-left: 2px solid white;
 }

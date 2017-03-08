@@ -103,14 +103,18 @@ window.app = {
 
 			function switch_to_simple(){
 				$('#switch-simple').addClass('active-switch').siblings().removeClass('active-switch');
+				$('.switcher-mobile').find('#switch-simple').addClass('active-switch').siblings().removeClass('active-switch');
 			}
 
 			function switch_to_complex(){
 				$('#switch-complex').addClass('active-switch').siblings().removeClass('active-switch');
+				$('.switcher-mobile').find('#switch-complex').addClass('active-switch').siblings().removeClass('active-switch');
+
 			}
 
 			function switch_to_challenge(){
 				$('[data-switch]').removeClass('active-switch');
+				$('.switcher-mobile').find('[data-switch]').removeClass('active-switch');
 			}			
 
 		}
