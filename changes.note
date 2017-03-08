@@ -11,7 +11,7 @@ Changes:
 
 -+ Content area of 1000 px wide needs left and right margins or padding of 40 px
 
--? Top bar content is extending beyond the 1000px wide area
+-+ Top bar content is extending beyond the 1000px wide area
 
 -+ Need white space on bottom of index page like other pages
 
@@ -21,15 +21,15 @@ Changes:
 
 -+ Top bar should be 95% opacity on sub pages
 
--? Pages should not be scalable on mobile!
+-+ Pages should not be scalable on mobile!
 
--? Tools icons are extending beyond its container on mobile
+-+? Tools icons are extending beyond its container on mobile
 
 -+ Need white space on bottom of index on mobile
 
 -+ Monitor_2.png is cut off on mobile index
 
-- Pages do not load scrolled to top on mobile
+-+ Pages do not load scrolled to top on mobile
 
 - Gaps between switch white fill and border on mobile, maybe on desktop too?
 

@@ -72,7 +72,7 @@
 }
 
 [data-device="mobile"] #top-bar #switcher-inner{
-	-webkit=transform: scale(0.5) translateX(13%) translateY(10px);
+	-webkit-transform: scale(0.5) translateX(13%) translateY(10px);
 	transform: scale(0.5) translateX(13%) translateY(10px);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
