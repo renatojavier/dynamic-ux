@@ -210,12 +210,7 @@
 
 /*-- tools --*/
 [data-device="mobile"] #page-content .section.beta .section-content-tools{
-	max-height: 265px;
-	min-height: 185px;
-}
-
-[data-os="ios"] #page-content .section.beta .section-content-tools{
-	
+	height: 185px;
 }
 
 [data-device="mobile"] #page-content .section.beta .diagram-tools{

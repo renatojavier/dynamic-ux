@@ -59,3 +59,7 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 [data-device="desktop"] #top-bar #site-logo-group .fa{
 	margin-left: -15px;
 }
+
+[data-device="mobile"] #page-content .section.beta .section-content-tools{
+	height: 265px;
+}
