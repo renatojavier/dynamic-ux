@@ -7,6 +7,8 @@ window.app = {
 		this.switcher.initialize();
 		this.loadMozCSS();
 		this.counterFOUC();
+
+		TweenLite.to(window, 2, {scrollTo:400});
 	},
 
 	counterFOUC : function(){

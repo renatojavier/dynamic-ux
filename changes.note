@@ -39,6 +39,23 @@ Changes:
 
 -+ 2nd Paw print not lined up on mobile Phomio
 
+----------------------
+
+- The text in the More Info buttons is not vertically centered
+
+- Pages should not be scalable on mobile!
+
+- Pages do not load scrolled to top on mobile, they load part of the way down the page...
+
+-+ Switch top bar on mobile should be z indexed below the main top bar, it is currently above: the issue here is the drop shadow. The drop shadow of the top bar should be going down, on the switch bar on mobile, but currently the switch bars drop shadow goes up, on top of the top bar, which makes the switch bar look like its closer z indexed
+
+- Heading text "The best and easiest to use free Apps for Churches" and matching headings for other 2 blocks are not centered on mobile, they are too far left, they are clearly not centered
+
+- Phone for CC block on mobile index is supposed to be behind block, like the WMB phone is
+
+- Second top bar on mobile index should have its height taller so that the white extends up behind the regular top bar
+
+----------------------
 
 
 Extra payment changes +$35:

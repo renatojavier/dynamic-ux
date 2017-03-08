@@ -129,6 +129,10 @@
 	border-top: 0 none;
 }
 
+[data-device="mobile"] #portfolio-container .portfolio-cc .column-featured{
+	height: 560px;
+}
+
 [data-device="mobile"] #portfolio-container .portfolio-cc .column-featured-main{
 	margin-top: -10px;
 }
