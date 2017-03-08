@@ -41,6 +41,12 @@ window.app = {
 			content : ( this.device.phone() === null ) ? 'width=device-width, initial-scale=1' : 'width=320, minimum-scale=1.0, maximum-scale=10.0, user-scalable=no'
 		});
 
+		if(this.device.os() === "iOS"){
+			$('html').attr({
+				'data-os' : 'ios'
+			});
+		}
+
 		if( this.device.phone() !== null )
 			$('body').append('<link rel="stylesheet" id="stylesheet-mobile" type="text/css" href="assets/css/'+( $('html').data('portfolio') )+'-mobile.css">');
 		return;

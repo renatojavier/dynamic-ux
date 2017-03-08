@@ -213,6 +213,10 @@
 	height: 185px;
 }
 
+[data-os="ios"] #page-content .section.beta .section-content-tools{
+	height: 265px;
+}
+
 [data-device="mobile"] #page-content .section.beta .diagram-tools{
 	-webkit-transform: scale(0.45) translate(-68%, -53%);
 	transform: scale(0.45) translate(-68%, -53%);
