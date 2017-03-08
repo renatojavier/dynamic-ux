@@ -8,7 +8,7 @@ window.app = {
 		this.loadMozCSS();
 		this.counterFOUC();
 
-		TweenLite.to(window, 2, {scrollTo:400});
+		TweenLite.to(window, 0, { scrollTo: 0 });
 	},
 
 	counterFOUC : function(){
