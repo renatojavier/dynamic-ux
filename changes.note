@@ -33,7 +33,7 @@ Changes:
 
 -+ Gaps between switch white fill and border on mobile, maybe on desktop too?
 
-- Switch top bar on mobile should be z indexed below the main top bar, it is currently above
+-+ Switch top bar on mobile should be z indexed below the main top bar, it is currently above
 
 -+ Heading text "The best and easiest to use free Apps for Churches" and matching headings for other 2 blocks are not centered on mobile, they are too far left
 
