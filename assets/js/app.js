@@ -14,13 +14,14 @@ window.app = {
 
 		function watch(){
 			console.log('Monitoring...');
+
 			raf = window.requestAnimationFrame(watch);
-			if( $('#stylesheet-mobile').length ){
+
+			if( $('html').data('device') === 'desktop' || $('html').data('device') === 'mobile' ){
 				document.body.style.display = 'block';
 				window.cancelAnimationFrame(raf);
 			}
 		}
-
 		watch();
 	},
 
