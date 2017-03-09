@@ -4,11 +4,13 @@ window.app = {
 	initialize : function(){
 		window.preload_flag = true;
 		this.device_detection();
-		this.switcher.initialize();
+		
 		this.loadMozCSS();
 		this.counterFOUC();
 
-		TweenLite.to(window, 0, { scrollTo: 0 });
+		this.switcher.initialize();
+		
+		//TweenLite.to(window, 0, { scrollTo: 0 });
 	},
 
 	counterFOUC : function(){
@@ -60,6 +62,7 @@ window.app = {
 			self = this;
 			pages = ['cc','wmb','phomio'];
 			this.application();
+			this.scrollspy();
 		},
 
 		application : function(){
@@ -84,42 +87,67 @@ window.app = {
 						history.pushState("", document.title, id);
 					}
 				}
+			});		
+
+		},
+
+		scrollspy : function(){
+			$(window).scrollTop(0);
+
+			if( ! $('[data-switch]').length ) return;
+
+			var theme = $('html').data('theme')
+			,	hgt_topbar = $('#top-bar').height() + 1
+			,	hgt_m_switcher = ( window.app.device.phone() === null ) ? 0 : $('.switcher-mobile').height() + 10
+			,	breakpoints = {
+				'challenge' : $('#section-challenge').offset().top - ( hgt_topbar + hgt_m_switcher ),
+				'complex' : $('#section-complex').offset().top - ( hgt_topbar + hgt_m_switcher ),
+				'simple' : $('#section-simple').offset().top - ( hgt_topbar + hgt_m_switcher )
+			}
+			,	last_known_scroll_position = 0
+			,	ticking = false;
+
+			function optimizedScroll( y ){
+				if( y >= 0 && y <= breakpoints['complex'] ){
+					console.log('Neutral');
+					highlight(false);
+				}else if( y >= breakpoints['complex'] && y <= breakpoints['simple'] ){
+					console.log('Complex');
+					highlight('#switch-complex');
+				}else if(y > breakpoints['simple']){
+					console.log('Simple');
+					highlight('#switch-simple');
+				}
+			}
+
+			function highlight( elem ){
+				if( !elem ){
+					$('#switcher-container, .switcher-mobile').each(function(){
+						$(this).find('[data-switch]').removeClass('active-switch');
+					});
+					return;
+				}
+
+				$('#switcher-container, .switcher-mobile').each(function(){
+					$(this).find(elem).addClass('active-switch').siblings().removeClass('active-switch');
+				});
+			}
+
+			window.addEventListener('scroll', function(e){
+				last_known_scroll_position = window.scrollY;
+
+				if( !ticking ){
+					window.requestAnimationFrame(function() {
+						optimizedScroll(last_known_scroll_position);
+						ticking = false;
+					});
+				}
+
+				ticking = true;
 			});
 
-			/*--
-			 - scrollspy
-			 --*/
-			var controller_scrollspy = new ScrollMagic.Controller();
-
-			new ScrollMagic.Scene({triggerElement: "#section-challenge", duration: $('#section-challenge').height(), offset: 170, reverse: true})
-			.on("enter leave", switch_to_challenge)
-			.addTo(controller_scrollspy);
-		 	
-		 	new ScrollMagic.Scene({triggerElement: "#section-complex", duration: $('#section-complex').height(), offset: 170, reverse: true})
-			.on("enter leave", switch_to_complex)
-			.addTo(controller_scrollspy);
-
-			new ScrollMagic.Scene({triggerElement: "#section-simple", duration: $('#section-simple').height(), offset: 170, reverse: true})
-			.on("enter leave", switch_to_simple)
-			.addTo(controller_scrollspy);
-
-			function switch_to_simple(){
-				$('#switch-simple').addClass('active-switch').siblings().removeClass('active-switch');
-				$('.switcher-mobile').find('#switch-simple').addClass('active-switch').siblings().removeClass('active-switch');
-			}
-
-			function switch_to_complex(){
-				$('#switch-complex').addClass('active-switch').siblings().removeClass('active-switch');
-				$('.switcher-mobile').find('#switch-complex').addClass('active-switch').siblings().removeClass('active-switch');
-
-			}
-
-			function switch_to_challenge(){
-				$('[data-switch]').removeClass('active-switch');
-				$('.switcher-mobile').find('[data-switch]').removeClass('active-switch');
-			}			
-
 		}
+
 	}
 };
 
