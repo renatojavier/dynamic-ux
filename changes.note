@@ -41,11 +41,11 @@ Changes:
 
 ----------------------
 
-- The text in the More Info buttons is not vertically centered
+-+ The text in the More Info buttons is not vertically centered
 
-- Pages should not be scalable on mobile!
+-+ Pages should not be scalable on mobile!
 
-- Pages do not load scrolled to top on mobile, they load part of the way down the page...
+-+ Pages do not load scrolled to top on mobile, they load part of the way down the page...
 
 -+ Switch top bar on mobile should be z indexed below the main top bar, it is currently above: the issue here is the drop shadow. The drop shadow of the top bar should be going down, on the switch bar on mobile, but currently the switch bars drop shadow goes up, on top of the top bar, which makes the switch bar look like its closer z indexed
 
