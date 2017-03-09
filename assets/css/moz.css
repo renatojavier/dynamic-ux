@@ -13,4 +13,8 @@
 	[data-device] #portfolio-container .portfolio .column-text .cta-more-info{
 		line-height: 45px;
 	}
+
+	[data-device] #top-bar h3{
+		padding-top: 4px;
+	}
 }
