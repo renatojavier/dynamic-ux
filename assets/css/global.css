@@ -67,3 +67,9 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 [data-device="mobile"] #top-bar .inner{
 	min-height: 50px;
 }
+
+@media (max-width: 799px){
+	html{
+		width: 320px;
+	}
+}
