@@ -5,6 +5,7 @@ window.app = {
 	initialize : function(){
 		window.app.wmbMobilePlaybackOnce = true;
 		window.preload_flag = true;
+
 		this.device_detection();
 		
 		this.loadMozCSS();
@@ -16,13 +17,13 @@ window.app = {
 
 	},
 
-	wmbPlayBack : function( s, once ){
-		if( $('[data-portfolio=wmb]').length && this.device.phone() === null ) return;
+	wmbPlayBack : function( scrollPosition, begin ){
+		if( !$('[data-portfolio=wmb]').length || this.device.phone() === null ) return;
 
-		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios]').length ) ? $(window).outerHeight() : window.outerHeight );
+		begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios]').length ) ? $(window).outerHeight() : window.outerHeight );
 		document.getElementById('main-video').pause();
 
-		if( s >= begin && window.app.wmbMobilePlaybackOnce ){
+		if( scrollPosition >= begin && window.app.wmbMobilePlaybackOnce ){
 			console.log( 'Begin aninmation' );
 			window.wmb.playback.play();
 			window.app.wmbMobilePlaybackOnce = false;
