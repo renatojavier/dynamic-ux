@@ -14,16 +14,12 @@ window.app = {
 		
 		// TweenLite.to(window, 0, { scrollTo: 0 });
 
-		window.onEnd_wallAnimation = function(){
-			// document.getElementById('main-video').play();
-		}
-
 	},
 
 	wmbPlayBack : function( s, once ){
-		if( this.device.phone() === null ) return;
+		if( $('[data-portfolio=wmb]').length && this.device.phone() === null ) return;
 
-		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios') ) ? $(window).outerHeight() : window.outerHeight );
+		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios').length ) ? $(window).outerHeight() : window.outerHeight );
 		document.getElementById('main-video').pause();
 
 		if( s >= begin && window.app.wmbMobilePlaybackOnce ){
