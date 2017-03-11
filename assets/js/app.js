@@ -107,23 +107,20 @@ window.app = {
 			,	last_known_scroll_position = 0
 			,	ticking = false;
 
-			console.info('Challenge: ' +breakpoints['challenge']);
-			console.info('Complex: ' +breakpoints['complex']);
-			console.info('Simple: ' +breakpoints['simple']);
+			// console.info('Challenge: ' +breakpoints['challenge']);
+			// console.info('Complex: ' +breakpoints['complex']);
+			// console.info('Simple: ' +breakpoints['simple']);
 
-			console.info(hgt_topbar);
-			console.info(hgt_m_switcher);
+			// console.info(hgt_topbar);
+			// console.info(hgt_m_switcher);
 
 			function optimizedScroll( y ){
 				console.log(y);
 				if( y >= 0 && y <= breakpoints['complex'] ){
-					//console.log('Neutral');
 					highlight(false);
 				}else if( y >= breakpoints['complex'] && y <= breakpoints['simple'] ){
-					//console.log('Complex');
 					highlight('#switch-complex');
 				}else if(y > breakpoints['simple']){
-					//console.log('Simple');
 					highlight('#switch-simple');
 				}
 			}
