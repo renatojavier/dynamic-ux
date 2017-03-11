@@ -14,7 +14,7 @@ window.app = {
 		this.switcher.initialize();
 		
 		if( this.device.phone() !== null )
-			TweenLite.to(window, 0.1, { scrollTo: 0 });
+			TweenLite.to(window, 0.01, { scrollTo: 0 });
 
 	},
 
@@ -39,11 +39,15 @@ window.app = {
 			raf = window.requestAnimationFrame(watch);
 
 			if( $('html').data('device') === 'desktop' || $('html').data('device') === 'mobile' ){
-				document.body.style.display = 'block';
+				window.setTimeout(function(){
+					document.body.style.display = 'block';
+				}, 150 );
+
 				window.cancelAnimationFrame(raf);
 			}
 		}
-		watch();
+		watch();	
+		
 	},
 
 	loadMozCSS : function(){
