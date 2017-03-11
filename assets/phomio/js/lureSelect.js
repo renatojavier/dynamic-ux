@@ -161,6 +161,7 @@
     
     $searchbox.keyup(function()
       {
+      	console.log('typed');
       /*
       var search = "";
       search += $box.attr("data-colors");

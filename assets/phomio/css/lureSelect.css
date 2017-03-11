@@ -372,6 +372,7 @@ line-height: 120%;
 /*--
  - Fix
  --*/
+#lureSelect,
 #lureSelect *{
 	box-sizing: content-box;
 }
@@ -382,7 +383,7 @@ line-height: 120%;
 
 div#lureSelect{
 	width: 490px;
-	margin-bottom: 50px;
+	margin-bottom: 50px !important;
 }
 
 #lureSelect input.lureselect-searchbox{
