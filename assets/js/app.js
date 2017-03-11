@@ -19,7 +19,7 @@ window.app = {
 	wmbPlayBack : function( s, once ){
 		if( $('[data-portfolio=wmb]').length && this.device.phone() === null ) return;
 
-		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios').length ) ? $(window).outerHeight() : window.outerHeight );
+		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios]').length ) ? $(window).outerHeight() : window.outerHeight );
 		document.getElementById('main-video').pause();
 
 		if( s >= begin && window.app.wmbMobilePlaybackOnce ){
