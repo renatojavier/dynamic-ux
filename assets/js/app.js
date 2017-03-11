@@ -13,7 +13,8 @@ window.app = {
 
 		this.switcher.initialize();
 		
-		// TweenLite.to(window, 0, { scrollTo: 0 });
+		if( this.device.phone() !== null )
+			TweenLite.to(window, 0.1, { scrollTo: 0 });
 
 	},
 
