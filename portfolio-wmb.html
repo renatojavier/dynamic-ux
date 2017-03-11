@@ -25,7 +25,7 @@
 
 					<h1 id="portfolio-name">WatchMyBit</h1>
 
-					<div id="switcher-container">
+					<div id="switcher-container" class="switcher-desktop">
 						<div id="switcher-inner">
 							<a data-switch href="#section-complex"  id="switch-complex">complex</a>
 							<a data-switch href="#section-simple"  id="switch-simple" >simple</a>
@@ -186,7 +186,6 @@
 		<!-- Non-render blocker js -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="assets/js/lib/mobile-detect.min.js"></script>
-		<script src="assets/js/app.js"></script>
 
 		<script>
 			/*--
@@ -195,8 +194,12 @@
 			 - disabled user feedback module
 			 - disabled graph module
 			 --*/
-			window.wmb = window.wmb || new Object; 
+			window.wmb = window.wmb || new Object;
+			window.wmb.playback = window.wmb.playback || new Object;
+
 		</script>
+		<script src="assets/js/app.js"></script>
 		<script src="assets/wmb/dist/js/video.js"></script>
+		
 	</body>
 </html>

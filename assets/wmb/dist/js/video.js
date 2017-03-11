@@ -3,7 +3,7 @@
     v = {
         
         init : function(){
-            //this.wallAnimation.init();
+            this.wallAnimation.init();
             this.manualSend.init();
             // this.userFeedback.init();
             // this.graph.init();
@@ -38,17 +38,19 @@
                 pb = pb || 'auto';
                 
                 var tmp_delay = 1
-                ,   t = new TimelineMax({
+                ,   r = new TimelineMax({repeat: -1, delay: tmp_delay})
+                ,   lift_off_offset = -1 * $('#main-video-cont').outerHeight()
+                ,   lift_off_time = 0.5;
+                
+                window.wmb.playback = new TimelineMax({
                     onStart : startAnimation,
                     onStartParams : [window.onStart_wallAnimation],
                     onComplete : endAnimation,
                     onCompleteParams : [window.onEnd_wallAnimation],
                     delay: tmp_delay
-                })
-                ,   r = new TimelineMax({repeat: -1, delay: tmp_delay})
-                ,   lift_off_offset = -1 * $('#main-video-cont').outerHeight()
-                ,   lift_off_time = 0.5;
-                
+                });
+
+                var t = window.wmb.playback;
                 
                 r.to('.btc', 0.3, {
                         rotation : 420,
@@ -67,13 +69,21 @@
                         ease : Quad.easeIn
                     }, 'translate')
 
+                .call(function(){
+                	if( $('[data-device=mobile]').length )
+                		document.getElementById('main-video').play();
+                }, [], null, 'video-start')
+                .add("video-start", "0.0")
+
                  .to('#main-video', lift_off_time, {
+                 	delay : ( $('[data-device=mobile]').length ) ? document.getElementById('main-video').duration - 1 : 0,
                     y : lift_off_offset,
                     autoAlpha : 0,
                     ease : Expo.easeOut
                  }, 'lift-off')
 
                  .to('#main-video-overlay', lift_off_time, {
+                 	delay : ( $('[data-device=mobile]').length ) ? document.getElementById('main-video').duration - 1 : 0,
                     y : lift_off_offset,
                      autoAlpha : 0,
                     ease : Expo.easeOut
@@ -93,7 +103,7 @@
                     // change arrow
                     $('#wp-arrow').addClass('wp-arrow arrow-fin');
 
-                    console.log('Coin animation started...');
+                    // console.log('Coin animation started...');
                     
                     if(typeof cb === 'function'){
                         cb();
@@ -102,9 +112,9 @@
                 
                 function endAnimation(cb){
                     // initiate stars animation and other prop
-                    setTimeout(function(){
-                        v.starRating.init();
-                     }, 10000);
+                    // setTimeout(function(){
+                    //     v.starRating.init();
+                    //  }, 10000);
                     
                     if(typeof cb === 'function'){
                         cb();
@@ -118,8 +128,10 @@
                     r.resume();  
                     t.resume();  
                   }else{
-                    r.play();
-                    t.play();
+                  	if( $('[data-device=desktop]').length ){
+	                    r.play();
+	                    t.play();
+	                }
                    }
             }
             

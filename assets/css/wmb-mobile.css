@@ -78,11 +78,28 @@
 	}
 
 	[data-device="mobile"] #switcher-inner a{ text-decoration: none; }
+	
 	[data-device="mobile"] #switcher-inner{
-		-webkit-transform: scale(0.5) translateX(13%) translateY(10px);
+		/*-webkit-transform: scale(0.5) translateX(13%) translateY(10px);
 		transform: scale(0.5) translateX(13%) translateY(10px);
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
+		*/
+	    width: 186px;
+	    height: 26px;
+	    float: none;
+	    display: block;
+	    margin: 19px auto 0;
+	    vertical-align: middle;
+	    line-height: 23px;
+	    font-size: 13px;
+	    border-radius: 7px;
+	    border-width: 2px;
+	}
+
+	[data-device="mobile"] #switcher-inner a,
+	[data-device="mobile"] #top-bar #switcher-inner a{
+		border-width: 1px !important;
 	}
 
 	/*--

@@ -1,7 +1,9 @@
 window.app = {
 	device : null,
+	wmbMobilePlaybackOnce : true,
 
 	initialize : function(){
+		window.app.wmbMobilePlaybackOnce = true;
 		window.preload_flag = true;
 		this.device_detection();
 		
@@ -10,15 +12,32 @@ window.app = {
 
 		this.switcher.initialize();
 		
-		//TweenLite.to(window, 0, { scrollTo: 0 });
+		// TweenLite.to(window, 0, { scrollTo: 0 });
+
+		window.onEnd_wallAnimation = function(){
+			// document.getElementById('main-video').play();
+		}
+
+	},
+
+	wmbPlayBack : function( s, once ){
+		if( this.device.phone() === null ) return;
+
+		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - window.outerHeight;
+		document.getElementById('main-video').pause();
+
+		if( s >= begin && window.app.wmbMobilePlaybackOnce ){
+			console.log( begin );
+			window.wmb.playback.play();
+			window.app.wmbMobilePlaybackOnce = false;
+		}
+
 	},
 
 	counterFOUC : function(){
 		var raf;
 
 		function watch(){
-			console.log('Monitoring...');
-
 			raf = window.requestAnimationFrame(watch);
 
 			if( $('html').data('device') === 'desktop' || $('html').data('device') === 'mobile' ){
@@ -115,7 +134,7 @@ window.app = {
 			// console.info(hgt_m_switcher);
 
 			function optimizedScroll( y ){
-				console.log(y);
+				//console.log(y);
 				if( y >= 0 && y <= breakpoints['complex'] ){
 					highlight(false);
 				}else if( y >= breakpoints['complex'] && y <= breakpoints['simple'] ){
@@ -123,6 +142,8 @@ window.app = {
 				}else if(y > breakpoints['simple']){
 					highlight('#switch-simple');
 				}
+
+				window.app.wmbPlayBack(y);
 			}
 
 			function highlight( elem ){

@@ -385,6 +385,10 @@ div#lureSelect{
 	margin-bottom: 50px;
 }
 
+#lureSelect input.lureselect-searchbox{
+	outline: none;
+}
+
 @media (max-width: 799px){
 	[data-device="mobile"] #lureSelect{
 	    -webkit-transform: scale(0.6122448979591837) translate(-28%,0%);
@@ -395,8 +399,8 @@ div#lureSelect{
 
 	[data-device="mobile"] #phomio-photo-container{
 	    margin-top: 400px;
-	    margin-left: -20px;
-	    -webkit-transform: scale(0.9933774834437086);
-	    transform: scale(0.9933774834437086);
+	    margin-left: 0;
+	    -webkit-transform: scale(0.9);
+	    transform: scale(0.9);
 	}
 }
