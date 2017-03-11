@@ -55,7 +55,7 @@ background-color: #000000;
 
 div.entry div.top-cont div.date a
 {
-background-image: url('//phomeo.com/contest/data/global/images/button-social-icon-small.png');
+background-image: url('../../phomio/images/lureSelect/button-social-icon-small.png');
 }
 div.entry div.top-cont div.date a          { }
 div.entry div.top-cont div.date a.twitter  { }
@@ -330,7 +330,7 @@ div.entry div.top-cont div.date a {
     margin-top: 2px;
     width: 22px;
     height: 22px;
-    background-image: url(//www.phomeo.com/contest/data/global/images/button-social-icon-small.png);
+    background-image: url(../../phomio/images/lureSelect/button-social-icon-small.png);
 }
 
 div.entry div.top-cont div.date a {
