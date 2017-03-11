@@ -27,7 +27,7 @@ window.app = {
 		document.getElementById('main-video').pause();
 
 		if( s >= begin && window.app.wmbMobilePlaybackOnce ){
-			console.log( begin );
+			console.log( 'Begin aninmation' );
 			window.wmb.playback.play();
 			window.app.wmbMobilePlaybackOnce = false;
 		}
