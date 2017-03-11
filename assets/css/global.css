@@ -68,8 +68,30 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 	min-height: 50px;
 }
 
+[data-device="desktop"] .retina-mobile{
+	display: none;
+}
+
+[data-device="desktop"] .non-retina{
+	display: block;
+}
+
 @media (max-width: 799px){
-	html{
+	[data-device="mobile"]{
 		width: 320px;
+	}
+
+	[data-device="mobile"] .retina-mobile{
+		display: block;
+	}
+
+	[data-device="mobile"] .retina-mobile img{
+		width: 100%;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	[data-device="mobile"] .non-retina{
+		display: none;
 	}
 }

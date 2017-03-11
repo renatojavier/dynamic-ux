@@ -1,3 +1,29 @@
+-+ Maybe making the pages responsive instead of device detection will fix a few of the above issues regarding scaling and loading half way down the page? Still only desktop and mobile view, with 799 width break point. You can use the same css for mobile that we have now
+
+-+ Down state on buttons should not move down 2px, keep it where it is
+
+-+ Use Retina graphics on mobile index page all files named with @2x logos and phones
+
+-+ add toms Phomio styles via html see here: http://tomstazlures.com/
+use EXACT styles including moving animation of overstate of lure image for the photo that is Matthew Posted Sun, Nov 29th (photos are in order descending)
+
+-+ copy in product selector from existing files in phomio_lure_select, Lure select goes on phomio page you can see a sample here: http://dyn.am/portfolio/toms
+
+-+ copy in video player from existing files that scales with mobile, autoplay MUTED by default, no autoplay on mobile in wmb folder, only use the player, nothing surrounding it and autoplay only after animation. Animation starts when you scroll to the block. Auto play preview.mp4 after animation
+
+-+ Everything in the top bar needs to be vertically centered on desktop in firefox
+
+-+ Weird small shadow on bottom of wmb block on mobile index needs to be removed
+
+-+ Phones on CC page should not be on 2 lines, all 4 should be on 1 line
+
+-+ The subtitles on  desktop (The best and easiest to use free Apps for Churches.) need to be on one line, and centered vertically with the center of their corresponding logo that is to their left.
+
+Files: http://dyn.am/renato/additions.zip
+
+
+----------
+
 Changes:
 -+ Everything in the top bar needs to be vertically centered on desktop in firefox
 

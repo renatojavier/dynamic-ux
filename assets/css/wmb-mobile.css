@@ -236,6 +236,15 @@
 
 	[data-device="mobile"] #page-content .section.charlie #img_c_wmb_logo{
 		width: 175px;
-		margin-top: 50px;
+	    margin-top: 240px;
+	}
+
+	#main-video-cont{
+		position: absolute !important;
+	    top: 110px;
+	    -webkit-transform: scale(0.3333) translate(-105%, -138%);
+	    transform: scale(0.3333) translate(-105%, -138%);
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
 	}
 }

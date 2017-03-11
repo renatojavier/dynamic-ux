@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/wmb-desktop.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/wmb-mobile.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/wmb/dist/css/video.css"/>
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
@@ -103,7 +104,64 @@
 						<h3 class="section-title-centered">Simplicity</h3>
 						<div class="section-content">
 							<figure class="section-diagram">
-								<img src="assets/img/placeholder_wmb_player.jpg" alt id="img_c_placeholder_wmb_player">
+
+								<div id="main-video-cont">
+					                <video id="main-video" autoplay="false" loop="true" muted="true" alt="&nbsp;" poster="">
+					                    <source type="video/mp4" src="assets/wmb/images/small_loop.mp4" />
+					                    <source type="video/webm" src="assets/wmb/images/small_loop.webm" />
+					                    <source type="video/ogg" src="assets/wmb/images/small_loop.ogv" />
+					                </video>
+
+					                <div id="main-video-overlay">
+					                    <div class="blur"></div>
+					                    <div class="wp-mask-clip">
+					                        <div id="trn-msg">
+					                            <span>Awaiting Transaction...</span>
+					                            <img src="assets/wmb/images/check.gif" alt="check animated green icon">
+					                        </div>
+					                        <div id="wp-arrow" class="wp-arrow arrow-init">
+					                            <div class="arrow-shaft"></div>
+					                            <div class="arrow-head"></div>
+					                        </div><!--/.wp-arrow-->
+					                    </div><!--/.wp-mask-clip-->
+					                    
+					                    <div class="wp-btc-slot">
+					                        <div class="wp-btc">
+					                            <div class="btc-y">
+					                                <div class="btc"></div>
+					                            </div>
+					                        </div>
+					                        <div class="slot"></div>
+					                    </div><!--/.wp-btc-slot-->
+					                    
+					                    <div class="ins-txt">Scan to send &dollar;0.19 and Watch Video</div>
+					                    
+					                    <div class="qr-code"></div>
+					                    
+					                    <div class="wp-cta-btn">
+					                        <a class="cta-btn" href="#">Manual Send / Advanced</a>
+					                        <a class="cta-btn" href="#">Watch FREE Preview</a>
+					                    </div><!--/.wp-cta-btn-->
+					                    
+					                    <div class="wp-copy">
+					                        <div class="copy-inner">
+					                            <span class="copy-prop copy-prop-txt">This QR code initiates a payment request for</span>
+					                            <span class="copy-prop copy-prop-txfd" id="bit-copy">
+					                                <input type="text" value="0.00080000">
+					                                <a href="#">Copy</a>
+					                            </span>
+					                            <span class="copy-prop copy-prop-txt" id="wd-to">to</span>
+					                            <span class="copy-prop copy-prop-txfd" id="hash-copy">
+					                                <input type="text" value="146QyVLdpsLmdbzswtwkuWboNt8YqRJZji">
+					                                <a href="#">Copy</a>
+					                            </span>
+					                        </div>
+					                    </div>
+					                    
+					                </div><!--/#main-video-overlay-->
+
+					            </div><!--/#main-video-cont-->
+
 								<img src="assets/img/wmb_logo.png" alt id="img_c_wmb_logo">
 							</figure>
 						</div>
@@ -120,7 +178,7 @@
 		</div><!--/#viewport-->
 
 		<!-- anchor swithc app -->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
@@ -130,5 +188,15 @@
 		<script src="assets/js/lib/mobile-detect.min.js"></script>
 		<script src="assets/js/app.js"></script>
 
+		<script>
+			/*--
+			 - Adjustments:
+			 - created inline wmb namespace
+			 - disabled user feedback module
+			 - disabled graph module
+			 --*/
+			window.wmb = window.wmb || new Object; 
+		</script>
+		<script src="assets/wmb/dist/js/video.js"></script>
 	</body>
 </html>

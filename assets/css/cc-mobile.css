@@ -78,11 +78,28 @@
 	}
 
 	[data-device="mobile"] #switcher-inner a{ text-decoration: none; }
+
 	[data-device="mobile"] #switcher-inner{
-		-webkit-transform: scale(0.5) translateX(13%) translateY(10px);
+		/*-webkit-transform: scale(0.5) translateX(13%) translateY(10px);
 		transform: scale(0.5) translateX(13%) translateY(10px);
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
+		*/
+	    width: 186px;
+	    height: 26px;
+	    float: none;
+	    display: block;
+	    margin: 19px auto 0;
+	    vertical-align: middle;
+	    line-height: 21px;
+	    font-size: 13px;
+	    border-radius: 7px;
+	    border-width: 2px;
+	}
+
+	[data-device="mobile"] #switcher-inner a,
+	[data-device="mobile"] #top-bar #switcher-inner a{
+		border-width: 1px !important;
 	}
 
 
@@ -172,19 +189,16 @@
 	}
 
 	/*-- design --*/
-	[data-device="mobile"] #page-content .section.beta{}
-
-	[data-device="mobile"] #page-content .section.beta #img_a_church{
-		width: 92px;
+	[data-device="mobile"] #page-content .section.beta .diagram-design{
+		height: 130px;
 	}
 
-	[data-device="mobile"] #page-content .section.beta #img_a_phone_3{
-		width: 88px;
-	}
 
-	[data-device="mobile"] #page-content .section.beta #img_a_phone_1,
-	[data-device="mobile"] #page-content .section.beta #img_a_phone_2{
-		display: none;
+	[data-device="mobile"] #page-content .section.beta .diagram-design img{
+	    width: calc(25% - 8px) !important;
+	    display: block !important;
+	    float: left;
+	    margin: 0 4px !important;
 	}
 
 	[data-device="mobile"] #page-content .section.beta .diagram-design img{

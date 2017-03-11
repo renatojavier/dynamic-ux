@@ -1,3 +1,5 @@
+@import "../wmb/dist/css/font/stylesheet.css";
+
 body{
 	overflow-y: scroll;
 	background-color: rgb(246, 191, 2);
@@ -289,4 +291,31 @@ body{
 
 [data-device] #page-content .section.charlie #img_c_wmb_logo{
 	margin-top: 100px;
+}
+
+/*--
+ - video player
+ --*/
+#main-video{
+	font: 12pt/120% "source_sans_proregular", Helvetica, Arial, sans-serif;
+}
+
+#trn-msg > *:nth-child(2) {
+	display: inline-block !important;
+    margin-left: 5px !important;
+    margin-bottom: -3px !important;
+    opacity: 0;
+}
+
+.wp-copy .copy-prop-txfd > input{
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.wp-copy .copy-prop-txt{
+    font-family: "source_sans_proregular", Helvetica, Arial, sans-serif;
+}
+
+.wp-copy .copy-prop-txt:nth-of-type(1){
+    line-height: 20px;
 }
