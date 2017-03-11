@@ -39,9 +39,9 @@ window.app = {
 			raf = window.requestAnimationFrame(watch);
 
 			if( $('html').data('device') === 'desktop' || $('html').data('device') === 'mobile' ){
-				window.setTimeout(function(){
-					document.body.style.display = 'block';
-				}, 150 );
+				//window.setTimeout(function(){
+				document.body.style.display = 'block';
+				//}, 150 );
 
 				window.cancelAnimationFrame(raf);
 			}
