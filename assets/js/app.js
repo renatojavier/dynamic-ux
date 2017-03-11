@@ -23,7 +23,7 @@ window.app = {
 	wmbPlayBack : function( s, once ){
 		if( this.device.phone() === null ) return;
 
-		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - window.outerHeight;
+		var begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios') ) ? $(window).outerHeight() : window.outerHeight );
 		document.getElementById('main-video').pause();
 
 		if( s >= begin && window.app.wmbMobilePlaybackOnce ){
