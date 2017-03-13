@@ -38,7 +38,6 @@
                 pb = pb || 'auto';
                 
                 var tmp_delay = 1
-                ,   r = new TimelineMax({repeat: -1, delay: tmp_delay})
                 ,   lift_off_offset = -1 * $('#main-video-cont').outerHeight()
                 ,   lift_off_time = 0.5;
                 
@@ -50,7 +49,10 @@
                     delay: tmp_delay
                 });
 
-                var t = window.wmb.playback;
+                window.wmb.bitCoinSprite = new TimelineMax({repeat: -1, delay: tmp_delay})
+
+                var t = window.wmb.playback
+                ,	r = window.wmb.bitCoinSprite;
                 
                 r.to('.btc', 0.3, {
                         rotation : 420,

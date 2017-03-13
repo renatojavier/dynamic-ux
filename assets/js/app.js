@@ -36,6 +36,7 @@ window.app = {
 			console.log( 'Begin aninmation...' );
 
 			window.wmb.playback.play();
+			window.wmb.bitCoinSprite.play();
 			document.getElementById('main-video').play();
 
 			window.app.wmbPlaybackOnce = false;
