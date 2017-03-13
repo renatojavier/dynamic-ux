@@ -21,6 +21,7 @@ window.app = {
 
 		if( $('[data-device=mobile]').length ) return;
 		window.onEnd_wallAnimation = function(){
+			console.log('Play next preview.mp4 on desktop...');
 			document.getElementById('main-video-preview').play();
 		};
 	},
@@ -34,10 +35,10 @@ window.app = {
 		if( scrollPosition >= begin && window.app.wmbPlaybackOnce ){
 			console.log( 'Begin aninmation...' );
 
-			//document.getElementById('main-video').play();
-			//window.wmb.playback.play();
+			window.wmb.playback.play();
+			document.getElementById('main-video').play();
 
-			//window.app.wmbPlaybackOnce = false;
+			window.app.wmbPlaybackOnce = false;
 		}
 
 	},
