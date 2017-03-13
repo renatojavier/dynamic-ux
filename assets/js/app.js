@@ -34,10 +34,10 @@ window.app = {
 		if( scrollPosition >= begin && window.app.wmbPlaybackOnce ){
 			console.log( 'Begin aninmation...' );
 
-			document.getElementById('main-video').play();
-			window.wmb.playback.play();
+			//document.getElementById('main-video').play();
+			//window.wmb.playback.play();
 
-			window.app.wmbPlaybackOnce = false;
+			//window.app.wmbPlaybackOnce = false;
 		}
 
 	},
