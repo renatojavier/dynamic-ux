@@ -319,3 +319,22 @@ body{
 .wp-copy .copy-prop-txt:nth-of-type(1){
     line-height: 20px;
 }
+
+/*--
+ - WMB video preview.mp4
+ --*/
+#main-video{
+	position: relative;
+}
+
+#main-video,
+#main-video-overlay{
+	z-index: 2;
+}
+
+#main-video-preview{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}

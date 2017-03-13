@@ -69,14 +69,14 @@
                         ease : Quad.easeIn
                     }, 'translate')
 
-                .call(function(){
-                	if( $('[data-device=mobile]').length )
-                		document.getElementById('main-video').play();
-                }, [], null, 'video-start')
-                .add("video-start", "0.0")
+                // .call(function(){
+                // 	if( $('[data-device=mobile]').length )
+                // 		document.getElementById('main-video').play();
+                // }, [], null, 'video-start')
+                // .add("video-start", "0.0")
 
                  .to('#main-video', lift_off_time, {
-                 	delay : ( $('[data-device=mobile]').length ) ? document.getElementById('main-video').duration - 1 : 0,
+                 	// delay : ( $('[data-device=mobile]').length ) ? document.getElementById('main-video').duration - 1 : 0,
                     y : lift_off_offset,
                     autoAlpha : 0,
                     ease : Expo.easeOut
@@ -128,7 +128,7 @@
                     r.resume();  
                     t.resume();  
                   }else{
-                  	if( $('[data-device=desktop]').length ){
+                  	if( false ){ //$('[data-device=desktop]').length ){
 	                    r.play();
 	                    t.play();
 	                }

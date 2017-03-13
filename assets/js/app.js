@@ -1,31 +1,43 @@
 window.app = {
-	device : null,
-	wmbMobilePlaybackOnce : true,
+	wmbPlaybackOnce : true,
 
 	initialize : function(){
-		window.app.wmbMobilePlaybackOnce = true;
+		window.app.wmbPlaybackOnce = true;
 		window.preload_flag = true;
 
 		this.loadMozCSS();
 		this.counterFOUC();
 
 		this.switcher.initialize();
-		
-		// if( window.__device.phone() !== null )
-		// 	TweenLite.to(window, 0.01, { scrollTo: 0 });
+		this.wmbStartMainVideo();
 
+		// if( window.__device.phone() !== null ) TweenLite.to(window, 0.01, { scrollTo: 0 });
+	},
+
+	wmbStartMainVideo : function(){
+		if( !$('[data-portfolio=wmb]').length ) return;
+		document.getElementById('main-video-preview').pause();
+		document.getElementById('main-video-preview').autoplay = false;
+
+		if( $('[data-device=mobile]').length ) return;
+		window.onEnd_wallAnimation = function(){
+			document.getElementById('main-video-preview').play();
+		};
 	},
 
 	wmbPlayBack : function( scrollPosition, begin ){
-		if( !$('[data-portfolio=wmb]').length || window.__device.phone() === null ) return;
+		if( !$('[data-portfolio=wmb]').length ) return;
 
 		begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios]').length ) ? $(window).outerHeight() : window.outerHeight );
 		document.getElementById('main-video').pause();
 
-		if( scrollPosition >= begin && window.app.wmbMobilePlaybackOnce ){
-			console.log( 'Begin aninmation' );
+		if( scrollPosition >= begin && window.app.wmbPlaybackOnce ){
+			console.log( 'Begin aninmation...' );
+			
+			document.getElementById('main-video').play();
 			window.wmb.playback.play();
-			window.app.wmbMobilePlaybackOnce = false;
+
+			window.app.wmbPlaybackOnce = false;
 		}
 
 	},
