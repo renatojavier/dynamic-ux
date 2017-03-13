@@ -4,7 +4,7 @@
 		<title>Home &ndash; Dynamic UX Portfolio</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content>
+		<meta name="viewport" content="width=320, minimum-scale=1.0, maximum-scale=10.0, user-scalable=no">
 		<style type="text/css">body{ display: none; }</style>
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/index-desktop.css"/>
@@ -83,7 +83,7 @@
 							<h3 class="column-text-headline">description</h3>
 							<p class="column-text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis enim non placerat convallis. Maecenas enim nunc, lobortis id feugiat quis, tincidunt at nulla. Vivamus sit amet tellus sit. Vivamus sit amet tellus sit.</p>
 
-							<a class="cta-more-info" href="./portfolio-phomio.php" >more info <i class="fa fa-fw fa-chevron-right"></i></a>
+							<a class="cta-more-info" href="./portfolio-phomio.html" >more info <i class="fa fa-fw fa-chevron-right"></i></a>
 						</div>
 					</section>
 				</div><!--/.portfolio-phomio-->
@@ -130,6 +130,19 @@
 
 		</div><!--/#viewport-->
 
+		<script src="assets/js/lib/mobile-detect.min.js"></script>
+		<script>
+			window.__device = new MobileDetect( window.navigator.userAgent );
+
+			document
+			.querySelector('html')
+			.setAttribute('data-device', ( window.__device.phone() === null ) ? 'desktop' : 'mobile' );
+
+			document
+			.querySelector('html')
+			.setAttribute('data-os', (window.__device.os() === "iOS") ? 'ios' : 'android' );
+		</script>
+
 		<!-- anchor swithc app -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
@@ -138,8 +151,10 @@
 
 		<!-- Non-render blocker js -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="assets/js/lib/mobile-detect.min.js"></script>
+		
 		<script src="assets/js/app.js"></script>
 		
 	</body>
 </html>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

@@ -6,20 +6,18 @@ window.app = {
 		window.app.wmbMobilePlaybackOnce = true;
 		window.preload_flag = true;
 
-		this.device_detection();
-		
 		this.loadMozCSS();
 		this.counterFOUC();
 
 		this.switcher.initialize();
 		
-		// if( this.device.phone() !== null )
+		// if( window.__device.phone() !== null )
 		// 	TweenLite.to(window, 0.01, { scrollTo: 0 });
 
 	},
 
 	wmbPlayBack : function( scrollPosition, begin ){
-		if( !$('[data-portfolio=wmb]').length || this.device.phone() === null ) return;
+		if( !$('[data-portfolio=wmb]').length || window.__device.phone() === null ) return;
 
 		begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios]').length ) ? $(window).outerHeight() : window.outerHeight );
 		document.getElementById('main-video').pause();
@@ -51,30 +49,8 @@ window.app = {
 	},
 
 	loadMozCSS : function(){
-		if( this.device.phone() === null )
+		if( window.__device.phone() === null )
 			$('body').append('<link rel="stylesheet" type="text/css" href="assets/css/moz.css">');
-	},
-
-	device_detection : function( self ){
-		this.device = new MobileDetect(window.navigator.userAgent);
-
-		$('html').attr({
-			'data-device' : ( this.device.phone() === null ) ? 'desktop' : 'mobile'
-		});
-
-		$('meta[name=viewport]').attr({
-			content : ( this.device.phone() === null ) ? 'width=device-width, initial-scale=1' : 'width=320, minimum-scale=1.0, maximum-scale=10.0, user-scalable=no'
-		});
-
-		if(this.device.os() === "iOS"){
-			$('html').attr({
-				'data-os' : 'ios'
-			});
-		}
-
-		//if( this.device.phone() !== null )
-			//$('body').append('<link rel="stylesheet" id="stylesheet-mobile" type="text/css" href="assets/css/'+( $('html').data('portfolio') )+'-mobile.css">');
-		return;
 	},
 
 	switcher : {
@@ -119,7 +95,7 @@ window.app = {
 
 			var theme = $('html').data('theme')
 			,	hgt_topbar = $('#top-bar').height() + 1
-			,	hgt_m_switcher = ( window.app.device.phone() === null ) ? 0 : $('.switcher-mobile').height() + 10
+			,	hgt_m_switcher = ( window.__device.phone() === null ) ? 0 : $('.switcher-mobile').height() + 10
 			,	breakpoints = {
 				'challenge' : $('#section-challenge').offset().top - ( hgt_topbar + hgt_m_switcher ),
 				'complex' : $('#section-complex').offset().top - ( hgt_topbar + hgt_m_switcher ),

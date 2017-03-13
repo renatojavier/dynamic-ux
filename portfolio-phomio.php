@@ -4,7 +4,7 @@
 		<title>Phomio &ndash; Dynamic UX Portfolio</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content>
+		<meta name="viewport" content="width=320, minimum-scale=1.0, maximum-scale=10.0, user-scalable=no">
 		<style type="text/css">body{ display: none; }</style>
 		<link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/css/phomio-desktop.css"/>
@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/phomio/css/lureSelect.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/phomio/css/lureSelectMobile.css"/>
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	</head>
 	<body>
 		<div id="viewport">
@@ -162,8 +163,10 @@ For example, a pet groomer used Phomio to for a Pet photo contest. Each pet was 
 							<figure class="section-diagram">
 
 								<?php 
-									$f = __DIR__ . '/assets/phomio/lureSelect.inc';
-									if( file_exists($f) ) require_once $f;
+									$f = './assets/phomio/lureSelect.inc';
+									if( file_exists($f) ){
+										require_once $f;
+									}
 								?>
 								
 								<div id="phomio-photo-container">
@@ -204,21 +207,30 @@ For example, a pet groomer used Phomio to for a Pet photo contest. Each pet was 
 
 		</div><!--/#viewport-->
 
-		<!-- anchor swithc app -->
+		<script src="assets/js/lib/mobile-detect.min.js"></script>
+		<script>
+			window.__device = new MobileDetect( window.navigator.userAgent );
+
+			document
+			.querySelector('html')
+			.setAttribute('data-device', ( window.__device.phone() === null ) ? 'desktop' : 'mobile' );
+
+			document
+			.querySelector('html')
+			.setAttribute('data-os', (window.__device.os() === "iOS") ? 'ios' : 'android' );
+		</script>
+
+		<!-- anchor switch app -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-
-		<!-- Non-render blocker js 
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 		<script src="assets/phomio/js/jquery.color-2.1.2.min.js"></script>
 		<script src="assets/phomio/js/jquery.ba-throttle-debounce-1.1.min.js"></script>
 
-		<script src="assets/js/lib/mobile-detect.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		
 		<script src="assets/phomio/js/lureSelect.js"></script>
