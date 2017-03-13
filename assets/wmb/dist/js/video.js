@@ -83,7 +83,7 @@
                  }, 'lift-off')
 
                  .to('#main-video-overlay', lift_off_time, {
-                 	delay : ( $('[data-device=mobile]').length ) ? document.getElementById('main-video').duration - 1 : 0,
+                 	// delay : ( $('[data-device=mobile]').length ) ? document.getElementById('main-video').duration - 1 : 0,
                     y : lift_off_offset,
                      autoAlpha : 0,
                     ease : Expo.easeOut
