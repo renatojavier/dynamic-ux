@@ -17,7 +17,7 @@ window.app = {
 	wmbStartMainVideo : function(){
 		if( !$('[data-portfolio=wmb]').length ) return;
 		document.getElementById('main-video-preview').pause();
-		document.getElementById('main-video-preview').autoplay = false;
+		document.getElementById('main-video').pause();
 
 		if( $('[data-device=mobile]').length ) return;
 		window.onEnd_wallAnimation = function(){
@@ -29,11 +29,11 @@ window.app = {
 		if( !$('[data-portfolio=wmb]').length ) return;
 
 		begin = ( $('#main-video').offset().top + $('.switcher-mobile').height() + 200 ) - ( ( $('[data-os=ios]').length ) ? $(window).outerHeight() : window.outerHeight );
-		document.getElementById('main-video').pause();
+		
 
 		if( scrollPosition >= begin && window.app.wmbPlaybackOnce ){
 			console.log( 'Begin aninmation...' );
-			
+
 			document.getElementById('main-video').play();
 			window.wmb.playback.play();
 
@@ -169,4 +169,4 @@ window.app = {
 
 window.addEventListener('load', function(){
 	this.app.initialize();
-}, false);
+}, false );
