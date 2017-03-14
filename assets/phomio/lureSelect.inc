@@ -24,9 +24,6 @@
       <option value="010-Bronze-Whaler" data-desc="010 Bronze Whaler freshwater lures c:brown bg:brown">
         010 Bronze Whaler
       </option>
-      <option value="012-Grey-Ghost" data-desc="012 Grey Ghost freshwater lures c:grey c:gray c:silver c:greysilver bg:greysilver">
-        012 Grey Ghost
-      </option>
       <option value="013-Predator" data-desc="013 Predator freshwater lures c:grey c:gray c:silver c:greysilver c:blue bg:blue">
         013 Predator
       </option>
@@ -36,14 +33,8 @@
       <option value="016-Mardi-Gras" data-desc="016 Mardi Gras freshwater lures c:red c:yellow c:gold c:yellowgold c:green bg:yellowgold">
         016 Mardi Gras
       </option>
-      <option value="018-Silver-Four-X" data-desc="018 Silver Four X freshwater lures c:grey c:gray c:silver c:greysilver c:red bg:greysilver">
-        018 Silver Four X
-      </option>
       <option value="019-Fruit-Salad" data-desc="019 Fruit Salad freshwater lures c:yellow c:gold c:yellowgold bg:yellowgold">
         019 Fruit Salad
-      </option>
-      <option value="020-Tiger" data-desc="020 Tiger freshwater lures c:yellow c:gold c:yellowgold bg:yellow">
-        020 Tiger
       </option>
       <option value="021-Skeleton" data-desc="021 Skeleton freshwater lures c:black c:white bg:white">
         021 Skeleton
@@ -51,26 +42,17 @@
       <option value="023-Speckled-Hen" data-desc="023 Speckled Hen freshwater lures c:green c:yellow c:gold c:yellowgold bg:green">
         023 Speckled Hen
       </option>
-      <option value="024-Bon-Bon" data-desc="024 Bon Bon freshwater lures c:yellow c:gold c:yellowgold bg:yellowgold">
-        024 Bon Bon
-      </option>
       <option value="025-Southern-Terror" data-desc="025 Southern Terror freshwater lures c:green c:yellow c:gold c:yellowgold bg:green">
         025 Southern Terror
       </option>
       <option value="026-Pink-Lady" data-desc="026 Pink Lady freshwater lures c:pink bg:pink">
         026 Pink Lady
       </option>
-      <option value="027-Alvin-Purple" data-desc="027 Alvin Purple freshwater lures c:purple bg:purple">
-        027 Alvin Purple
-      </option>
       <option value="028-Disco-Dancer" data-desc="028 Disco Dancer freshwater lures c:purple bg:purple">
         028 Disco Dancer
       </option>
       <option value="029-Silver-Bullet" data-desc="029 Silver Bullet freshwater lures c:grey c:gray c:silver c:greysilver bg:greysilver">
         029 Silver Bullet
-      </option>
-      <option value="030-Herbie" data-desc="030 Herbie freshwater lures c:green c:pink bg:pink">
-        030 Herbie
       </option>
       <option value="031-Red-Bumblebee" data-desc="031 Red Bumblebee freshwater lures c:black c:red bg:red">
         031 Red Bumblebee
@@ -113,9 +95,6 @@
       </option>
       <option value="048-Red-Nosed-Brown-Bomber" data-desc="048 Red Nosed Brown Bomber freshwater lures c:red c:brown bg:brown">
         048 Red Nosed Brown Bomber
-      </option>
-      <option value="049-Sunrise" data-desc="049 Sunrise freshwater lures c:orange c:yellow c:gold c:yellowgold c:black bg:yellowgold">
-        049 Sunrise
       </option>
       <option value="050-Frog" data-desc="050 Frog freshwater lures c:yellow c:gold c:yellowgold c:green bg:green">
         050 Frog
@@ -197,15 +176,6 @@
       </option>
       <option value="084-Black-Toad" data-desc="084 Black Toad freshwater lures c:red c:black bg:black">
         084 Black Toad
-      </option>
-      <option value="085-Hot-Butterscotch" data-desc="085 Hot Butterscotch freshwater lures c:red c:yellow c:gold c:yellowgold bg:yellowgold">
-        085 Hot Butterscotch
-      </option>
-      <option value="086-Rastaman" data-desc="086 Rastaman freshwater lures c:yellow c:gold c:yellowgold c:green c:red bg:green">
-        086 Rastaman
-      </option>
-      <option value="087-Beetle-Bomb" data-desc="087 Beetle Bomb freshwater lures c:black c:red c:yellow c:gold c:yellowgold bg:orange">
-        087 Beetle Bomb
       </option>
       <option value="088-Gold-Zebra" data-desc="088 Gold Zebra freshwater lures c:yellow c:gold c:yellowgold c:green bg:yellowgold">
         088 Gold Zebra
@@ -339,20 +309,8 @@
       <option value="PP-Phosphorous-Pearl" data-desc="PP Phosphorous Pearl freshwater lures c:orange c:white bg:orange">
         PP Phosphorous Pearl
       </option>
-      <option value="S02-Glitterbug" data-desc="S02 Glitterbug freshwater lures c:grey c:gray c:silver c:greysilver bg:greysilver">
-        S02 Glitterbug
-      </option>
       <option value="S05-Tinkerbell" data-desc="S05 Tinkerbell freshwater lures c:pink bg:pink">
         S05 Tinkerbell
-      </option>
-      <option value="S06-Starry-Night" data-desc="S06 Starry Night freshwater lures c:black bg:black">
-        S06 Starry Night
-      </option>
-      <option value="S08-Bobby-Dazzler" data-desc="S08 Bobby Dazzler freshwater lures c:red c:yellow c:gold c:yellowgold bg:red">
-        S08 Bobby Dazzler
-      </option>
-      <option value="S09-Irresistable" data-desc="S09 Irresistable freshwater lures c:yellow c:gold c:yellowgold c:green bg:green">
-        S09 Irresistable
       </option>
       <option value="S10-Cool-Dude" data-desc="S10 Cool Dude freshwater lures c:purple c:pink bg:pink">
         S10 Cool Dude
@@ -386,8 +344,5 @@
       </option>
       <option value="Y94-Yellow-Sunset" data-desc="Y94 Yellow Sunset freshwater lures c:yellow c:gold c:yellowgold c:red bg:orange">
         Y94 Yellow Sunset
-      </option>
-      <option value="YFR-Yellow-Freddo" data-desc="YFR Yellow Freddo freshwater lures c:yellow c:gold c:yellowgold c:green bg:green">
-        YFR Yellow Freddo
       </option>
     </select>

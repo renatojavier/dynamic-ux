@@ -26,7 +26,7 @@ body{
 }
 
 [data-device] #top-bar,
-[data-device] #top-bar #switcher-container{
+[data-device] #top-bar{
 	background-color: rgba(215, 45, 46, 0.95);
 }
 

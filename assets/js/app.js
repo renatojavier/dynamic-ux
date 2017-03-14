@@ -10,8 +10,39 @@ window.app = {
 
 		this.switcher.initialize();
 		this.wmbStartMainVideo();
+		this.wmbPlayBackIcon();
 
 		// if( window.__device.phone() !== null ) TweenLite.to(window, 0.01, { scrollTo: 0 });
+	},
+
+	wmbPlayBackIcon : function(){
+		if( !$('[data-portfolio=wmb]').length || !$('[data-device=mobile]').length ) return;
+
+		document.getElementById('main-video-preview')
+		.addEventListener('playing', function(){
+			document.getElementById('alt-video-play').style.display = 'none';
+			document.getElementById('alt-video-pause').style.cssText = 'display: block; opacity: 1';
+
+			setTimeout(function(){
+				document.getElementById('alt-video-pause').style.opacity = '0.2';
+			}, 700);
+		}, false );
+
+		document.getElementById('main-video-preview')
+		.addEventListener('pause', function(){
+			document.getElementById('alt-video-play').style.cssText = 'display: block;';
+			document.getElementById('alt-video-pause').style.cssText = 'display: none; opacity: 1';
+
+		}, false );
+
+		document.getElementById('alt-video-play').addEventListener('click', function(){
+			document.getElementById('main-video-preview').play();
+		}, false );
+
+		document.getElementById('alt-video-pause').addEventListener('click', function(){
+			document.getElementById('main-video-preview').pause();
+		}, false );
+
 	},
 
 	wmbStartMainVideo : function(){
@@ -19,8 +50,12 @@ window.app = {
 		document.getElementById('main-video-preview').pause();
 		document.getElementById('main-video').pause();
 
-		if( $('[data-device=mobile]').length ) return;
 		window.onEnd_wallAnimation = function(){
+			if( $('[data-device=mobile]').length ){
+				document.getElementById('alt-video-play').style.display = 'block';
+				return;
+			}
+
 			console.log('Play next preview.mp4 on desktop...');
 			document.getElementById('main-video-preview').play();
 		};

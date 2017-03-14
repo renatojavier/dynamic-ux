@@ -28,8 +28,8 @@ body{
 }
 
 [data-device] #top-bar,
-[data-device] #top-bar #switcher-container{
-	background-color: rgba(246, 191, 2, 0.95);
+[data-device] #top-bar{
+    background-color: rgba(246, 191, 2, 0.95);
 }
 
 [data-device] #top-bar > .inner{
@@ -233,6 +233,10 @@ body{
 	margin: 0 15px;
 }
 
+[data-device] #page-content .section.beta #img_b_wmb_rating_chart{
+    height: 60px;
+    width:  60px;
+}
 [data-device] #page-content .section.beta #img_b_wmb_arrow,
 [data-device] #page-content .section.beta #img_b_wmb_arrow_green,
 [data-device] #page-content .section.beta #img_b_wmb_check{
@@ -340,4 +344,25 @@ body{
     width: 900px;
     height: 506px;
     overflow: hidden;
+}
+
+/*--
+ - CSS hack, only solution that is available:
+ - https://bugs.chromium.org/p/chromium/issues/detail?id=675596&can=2&q=media%20download&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
+ --*/
+video::-internal-media-controls-download-button {
+    display:none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px);
+}
+
+[data-device] #alt-video-play,
+[data-device] #alt-video-pause{
+	display: none;
 }

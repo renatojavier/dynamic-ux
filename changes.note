@@ -1,3 +1,12 @@
+-+ Page still loading in wrong place on mobile
+- phones need to be same height on index
+-+ remove 1 px line above CC block on index
+-+ background area of index page should be white
+-+ Pages should not be scalable on mobile!
+- Responsive site
+
+---
+
 -+ Maybe making the pages responsive instead of device detection will fix a few of the above issues regarding scaling and loading half way down the page? Still only desktop and mobile view, with 799 width break point. You can use the same css for mobile that we have now
 
 -+ Down state on buttons should not move down 2px, keep it where it is
