@@ -10,7 +10,7 @@ window.app = {
 
 		this.switcher.initialize();
 		this.wmbStartMainVideo();
-		this.wmbPlayBackIcon();
+		//this.wmbPlayBackIcon();
 
 		// if( window.__device.phone() !== null ) TweenLite.to(window, 0.01, { scrollTo: 0 });
 	},
@@ -50,11 +50,14 @@ window.app = {
 		document.getElementById('main-video-preview').pause();
 		document.getElementById('main-video').pause();
 
+		
+
 		window.onEnd_wallAnimation = function(){
-			if( $('[data-device=mobile]').length ){
+			if( $('[data-os=ios]').length ){
 				document.getElementById('alt-video-play').style.display = 'block';
-				return;
 			}
+
+			if( $('[data-device=mobile]').length ) return;
 
 			console.log('Play next preview.mp4 on desktop...');
 			document.getElementById('main-video-preview').play();
