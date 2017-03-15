@@ -18,6 +18,12 @@ window.app = {
 	wmbPlayBackIcon : function(){
 		if( !$('[data-portfolio=wmb]').length || !$('[data-device=mobile]').length ) return;
 
+		$('#main-video-preview').on('click', function(){
+			document.getElementById('main-video-preview').play();
+		});
+
+		return;
+
 		document.getElementById('main-video-preview')
 		.addEventListener('playing', function(){
 			document.getElementById('alt-video-play').style.display = 'none';
