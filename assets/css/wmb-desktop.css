@@ -350,15 +350,15 @@ body{
  - CSS hack, only solution that is available:
  - https://bugs.chromium.org/p/chromium/issues/detail?id=675596&can=2&q=media%20download&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
  --*/
-video::-internal-media-controls-download-button {
+#main-video-preview::-internal-media-controls-download-button {
     display:none !important;
 }
 
-video::-webkit-media-controls-enclosure {
+#main-video-preview::-webkit-media-controls-enclosure {
     overflow:hidden;
 }
 
-video::-webkit-media-controls-panel {
+#main-video-preview::-webkit-media-controls-panel {
     width: calc(100% + 30px);
 }
 

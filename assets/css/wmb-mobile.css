@@ -265,6 +265,7 @@
 	    backface-visibility: hidden;
 	}
 
+	/*--
 	[data-device="mobile"] #alt-video-play,
 	[data-device="mobile"] #alt-video-pause{
 		position: absolute;
@@ -293,6 +294,66 @@
 
 	[data-os="ios"] #main-video-preview:-webkit-full-screen {
 	    width: 50% !important;
+	}
+	--*/
+
+	[data-os="ios"] #main-video-preview::-webkit-media-controls {
+	    width: inherit;
+	    height: inherit;
+	    position: relative;
+	    display: -webkit-flex;
+	    align-items: stretch;
+	    justify-content: flex-end;
+	    flex-direction: column;
+	    font-family: -apple-system;
+	    overflow: hidden;
+	}
+
+	[data-os="ios"] #main-video-preview::-webkit-media-controls-start-playback-button {
+	    -webkit-appearance: none;
+	    position: absolute;
+
+	    width: 72px;
+	    height: 72px;
+
+	    left: calc(50% - 36px);
+	    top: calc(50% - 36px);
+
+	    -webkit-clip-path: circle(36px at 50% 50%);
+
+	    -webkit-transform: scale(2.3671496848403066) translate3d(0px, 0px, 0px);
+	    transform: scale(2.3671496848403066) translate3d(0px, 0px, 0px);
+	}
+
+	[data-os="ios"] #main-video-preview::-webkit-media-controls-start-playback-background {
+	    -webkit-appearance: none;
+	    position: absolute;
+	    width: 72px;
+	    height: 72px;
+	    background-color: rgba(255, 255, 255, 0.2);
+	    -webkit-backdrop-filter: blur(10px) saturate(200%);
+	}
+
+	[data-os="ios"] #main-video-preview::-webkit-media-controls-start-playback-tint {
+	    -webkit-appearance: none;
+	    position: absolute;
+	    width: 72px;
+	    height: 72px;
+	    background-color: rgb(210, 210, 210);
+	    mix-blend-mode: darken;
+	}
+
+	[data-os="ios"] #main-video-preview::-webkit-media-controls-start-playback-button .webkit-media-controls-start-playback-glyph {
+	    -webkit-appearance: none;
+	    position: absolute;
+	    width: 72px;
+	    height: 72px;
+	    opacity: 0.45;
+	    mix-blend-mode: plus-darker;
+	    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAMAAACZHrEMAAAABGdBT…fybiAUxvpYAoyAsXxh3OSHbcN3MsbCGGOMMcYYY4wxxv57n0aw2iHhyI0VAAAAAElFTkSuQmCC);
+	    background-repeat: no-repeat;
+	    background-position: 50% 50%;
+	    background-size: 100%;
 	}
 
 }
