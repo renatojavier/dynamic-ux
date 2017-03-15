@@ -287,8 +287,12 @@
 		pointer-events: none;
 	}
 
-	[data-os="ios"] #main-video-preview::-webkit-media-controls{
+	[data-os="ios"] #main-video-preview:-webkit-media-controls{
 		display: none !important;
+	}
+
+	[data-os="ios"] #main-video-preview:-webkit-full-screen {
+	    width: 50% !important;
 	}
 
 }
