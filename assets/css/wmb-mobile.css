@@ -321,8 +321,8 @@
 
 	    -webkit-clip-path: circle(36px at 50% 50%);
 
-	    -webkit-transform: scale(2.3671496848403066) translate3d(0px, 0px, 0px);
-	    transform: scale(2.3671496848403066) translate3d(0px, 0px, 0px);
+	    -webkit-transform: scale(5.2) translate3d(0px, 0px, 0px);
+	    transform: scale(5.2) translate3d(0px, 0px, 0px);
 	}
 
 	[data-os="ios"] #main-video-preview::-webkit-media-controls-start-playback-background {

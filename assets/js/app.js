@@ -10,7 +10,7 @@ window.app = {
 
 		this.switcher.initialize();
 		this.wmbStartMainVideo();
-		this.wmbPlayBackIcon();
+		// this.wmbPlayBackIcon();
 
 		// if( window.__device.phone() !== null ) TweenLite.to(window, 0.01, { scrollTo: 0 });
 	},
