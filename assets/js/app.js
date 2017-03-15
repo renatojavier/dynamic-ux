@@ -60,7 +60,7 @@ window.app = {
 
 		window.onEnd_wallAnimation = function(){
 			if( $('[data-os=ios]').length ){
-				document.getElementById('alt-video-play').style.display = 'block';
+				// document.getElementById('alt-video-play').style.display = 'block';
 			}
 
 			if( $('[data-device=mobile]').length ) return;
