@@ -283,6 +283,12 @@
 	[data-device="mobile"] #alt-video-play,
 	[data-device="mobile"] #alt-video-pause{
 		display: none;
+		-webkit-pointer-events: none;
+		pointer-events: none;
+	}
+
+	[data-os="ios"] #main-video-preview::-webkit-media-controls{
+		display: none !important;
 	}
 
 }
