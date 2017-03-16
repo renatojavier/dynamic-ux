@@ -258,45 +258,17 @@
 
 	#main-video-cont{
 		position: absolute !important;
-	    top: 110px;
-	    -webkit-transform: scale(0.3333) translate(-105%, -138%);
-	    transform: scale(0.3333) translate(-105%, -138%);
+        top: -125px;
+    	left: -290px;
+	    -webkit-transform: scale(0.3333);
+	    transform: scale(0.3333);
 	    -webkit-backface-visibility: hidden;
 	    backface-visibility: hidden;
 	}
 
 	/*--
-	[data-device="mobile"] #alt-video-play,
-	[data-device="mobile"] #alt-video-pause{
-		position: absolute;
-	    font-size: 200px;
-	    z-index: 1000;
-	    top: 50%;
-	    left: 50%;
-	    margin-top: -10px;
-	    -webkit-transform: translate(-50%,-50%);
-	    transform: translate(-50%,-50%);
-	    -webkit-backface-visibility: hidden;
-	    cursor: pointer;
-	    text-shadow: 0 4px 7px black;
-	}
-
-	[data-device="mobile"] #alt-video-play,
-	[data-device="mobile"] #alt-video-pause{
-		display: none;
-		-webkit-pointer-events: none;
-		pointer-events: none;
-	}
-
-	[data-os="ios"] #main-video-preview:-webkit-media-controls{
-		display: none !important;
-	}
-
-	[data-os="ios"] #main-video-preview:-webkit-full-screen {
-	    width: 50% !important;
-	}
-	--*/
-
+	 - css polyfill to small iOS video poster play button
+	 --*/
 	[data-os="ios"] #main-video-preview::-webkit-media-controls {
 	    width: inherit;
 	    height: inherit;
