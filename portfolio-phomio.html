@@ -15,34 +15,35 @@
 		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<div id="viewport">
-			<header id="top-bar" class="container">
-				<section class="inner">
-					<figure id="site-logo-group">
-						<a href="./index.html">
-							<i class="fa fa-fw fa-angle-left"></i>
-							<img src="assets/img/dynamic_logo.png" alt="" id="site-logo">
-						</a>
-					</figure>
+		<header id="top-bar" class="container">
+			<section class="inner">
+				<figure id="site-logo-group">
+					<a href="./index.html">
+						<i class="fa fa-fw fa-angle-left"></i>
+						<img src="assets/img/dynamic_logo.png" alt="" id="site-logo">
+					</a>
+				</figure>
 
-					<h1 id="portfolio-name">Phomio</h1>
+				<h1 id="portfolio-name">Phomio</h1>
 
-					<div id="switcher-container" class="switcher-desktop">
-						<div id="switcher-inner">
-							<a data-switch href="#section-complex" id="switch-complex">complex</a>
-							<a data-switch href="#section-simple"  id="switch-simple">simple</a>
-						</div>
+				<div id="switcher-container" class="switcher-desktop">
+					<div id="switcher-inner">
+						<a data-switch href="#section-complex" id="switch-complex">complex</a>
+						<a data-switch href="#section-simple"  id="switch-simple">simple</a>
 					</div>
-
-				</section>
-			</header>
-
-			<div id="switcher-container" class="switcher-mobile">
-				<div id="switcher-inner">
-					<a data-switch href="#section-complex"  id="switch-complex">complex</a>
-					<a data-switch href="#section-simple" id="switch-simple">simple</a>
 				</div>
+
+			</section>
+		</header>
+
+		<div id="switcher-container" class="switcher-mobile">
+			<div id="switcher-inner">
+				<a data-switch href="#section-complex"  id="switch-complex">complex</a>
+				<a data-switch href="#section-simple" id="switch-simple">simple</a>
 			</div>
+		</div>
+	
+		<div id="viewport">
 
 			<div id="page-content">
 
@@ -86,17 +87,38 @@
 									<span>4</span>
 									<span>5</span>
 									<span>6</span>
-									<span>7</span>
-								</section>
+									<span>8</span>
+                            		<span>9</span>									
+                                    <span>10</span>
+									<span>11</span>
+									<span>12</span>
+									<span>13</span>
+									<span>14</span>
+									<span>15</span>
+									<span>16</span>
+                					<span>17</span>
+                                    <span>18</span>
+                                </section>
 								<section class="editor-column editor-column-code">
 									<pre>
-									<span class="editor-syntax-violet">// Strip EXIF to protect customer privacy.</span>
-									<span class="editor-syntax-yellow">function getExif( $file )</span> setArray = <span class="editor-syntax-yellow">function</span>(elems) {
-										<span class="editor-tab"><span class="editor-syntax-yellow">&#123;$exif = &#91;&#93;;</span>.length = 0;</span>
-										<span class="editor-tab">push.apply(<span class="editor-syntax-yellow">this</span>, elems);</span>
-										<span class="editor-tab"><span class="editor-syntax-yellow">return this</span>;</span>
-									}
-									</pre>
+<span class="editor-syntax-white">// Strip EXIF to protect customer privacy.</span>
+<span class="editor-syntax-violet">function</span> <span class="editor-syntax-bright-blue">getExif</span>(<span class="editor-syntax-blue"> $file</span> ) 
+{
+<span class="editor-syntax-blue">$exif</span> = [];
+<span class="editor-syntax-blue">$temp</span> = [];
+<span class="editor-syntax-purple">exec</span>(<span class="editor-syntax-red">"identify -format %[EXIF:*]</span><span class="editor-syntax-blue"> $file</span><span class="editor-syntax-red">"</span>, <span class="editor-syntax-blue">$temp</span>);
+    <span class="editor-syntax-violet">foreach</span> ( <span class="editor-syntax-blue">$temp</span> <span class="editor-syntax-violet">as</span> <span class="editor-syntax-blue">$t</span> )
+    {
+        <span class="editor-syntax-violet">if</span> ( <span class="editor-syntax-purple">trim</span>(<span class="editor-syntax-blue">$t</span>) == <span class="editor-syntax-red">""</span> )
+        {
+            <span class="editor-syntax-violet">continue</span>;
+        }
+        <span class="editor-syntax-violet">list</span>(<span class="editor-syntax-blue">$key</span>, <span class="editor-syntax-blue">$value</span>) = <span class="editor-syntax-purple">explode</span>(<span class="editor-syntax-red">"="</span>, <span class="editor-syntax-purple">str_replace</span>(<span class="editor-syntax-red">"exif:"</span>, <span class="editor-syntax-red">""</span>, <span class="editor-syntax-blue">$t</span>));
+        <span class="editor-syntax-blue">$exif</span>[<span class="editor-syntax-blue">$key</span>] = <span class="editor-syntax-blue">$value</span>;
+    }
+<span class="editor-syntax-violet">return</span> <span class="editor-syntax-blue">$exif;</span>
+}
+</pre>
 								</section>
 							</figure>
 						</div>
@@ -516,8 +538,8 @@ For example, a pet groomer used Phomio to for a Pet photo contest. Each pet was 
 									<div class="entry bg-pink">
 									    <div class="top-cont">
 									        <div class="date">Posted Sun, Nov 29th
-									            <a class="twitter" target="_blank" href="http://twitter.com/TomsTazLures/status/671452302457225217"></a>
-									            <a class="facebook" target="_blank" href="http://facebook.com/photo.php?fbid=750240431746739"></a>
+									            <a class="twitter" target="_blank" href="https://twitter.com/TomsTazLures/status/671452302457225217"></a>
+									            <a class="facebook" target="_blank" href="https://facebook.com/photo.php?fbid=750240431746739"></a>
 									        </div>
 									        <img class="image" src="assets/img/matthew.jpg">
 									    </div>
@@ -565,7 +587,7 @@ For example, a pet groomer used Phomio to for a Pet photo contest. Each pet was 
 		</script>
 
 		<!-- anchor switch app -->
-		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>

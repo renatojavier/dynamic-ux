@@ -17,4 +17,10 @@
 	[data-device] #top-bar h3{
 		padding-top: 4px;
 	}
+
+	[data-device="mobile"] #top-bar #site-logo-group img#site-logo{
+		margin-top: -3px;
+	}
+
+
 }

@@ -255,6 +255,7 @@
 	    margin-top: -35px;
 	    margin-bottom: -25px !important;
 	    width: 575px;
+	    overflow: hidden;
 	}
 
 	[data-device="mobile"] #page-content .section.beta .diagram-details{

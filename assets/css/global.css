@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 }
 
 [data-device="mobile"] #top-bar .inner{
-	min-height: 50px;
+	height: 50px;
 }
 
 [data-device="desktop"] .retina-mobile{
@@ -76,9 +76,40 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 	display: block;
 }
 
+[data-device] #switcher-inner{
+	overflow: hidden;
+}
+
+[data-device] #switcher-inner .active-switch{
+	-webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
+   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
 @media (max-width: 799px){
-	[data-device="mobile"]{
-		width: 320px;
+	[data-device="mobile"] #top-bar,
+	[data-device="mobile"] .switcher-mobile,
+	[data-device="mobile"] #viewport{
+		font-smoothing: antialiased !important;
+		top: 0;
+		left: 0;
+
+		-webkit-transform-origin: 0% 0% 0px;
+		-moz-transform-origin: 0% 0% 0px;
+		transform-origin: 0% 0% 0px;
+
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	[data-device="mobile"],
+	[data-device="mobile"] #top-bar,
+	[data-device="mobile"] .switcher-mobile{
+		width: 320px !important;
+	}
+
+	[data-device="mobile"] #top-bar{
+		overflow: hidden;
 	}
 
 	[data-device="mobile"] .retina-mobile{
@@ -93,5 +124,21 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 
 	[data-device="mobile"] .non-retina{
 		display: none;
+	}
+
+}
+
+@viewport{
+    
+}
+
+
+@-ms-viewport{
+    
+}
+
+@-moz-document url-prefix(){
+	[data-device="mobile"] #top-bar #site-logo-group img#site-logo{
+		margin-top: -3px;
 	}
 }

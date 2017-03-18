@@ -87,7 +87,6 @@
 	}
 
 	[data-device="mobile"] #portfolio-container .portfolio .column-text{
-	    box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
 	    margin-left: -10px;
 	    margin-right: -10px;
 	    z-index: 1;
@@ -126,10 +125,6 @@
 	}
 
 	/*-- portfolio cc --*/
-	[data-device="mobile"] #portfolio-container .portfolio-cc{
-		border-top: 0 none;
-	}
-
 	[data-device="mobile"] #portfolio-container .portfolio-cc .column-featured{
 		height: 560px;
 	}

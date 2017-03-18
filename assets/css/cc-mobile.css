@@ -277,4 +277,19 @@
 	#img_b_arrow_blue_down{
 		display: inline-block;
 	}
+
+}
+
+@-moz-document url-prefix(){
+
+	[data-responsive="1"] #section-simple{
+		clear: both;
+		top: -133px;
+		position: relative;
+	}
+
+	[data-responsive="1"] #section-simple .section-title{
+		margin-top: 0 !important;
+	}
+
 }

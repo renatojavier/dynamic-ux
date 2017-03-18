@@ -297,7 +297,7 @@ body{
 [data-device] #page-content .section.beta .diagram-editor{
 	position: relative;
 	width: 800px;
-	height: 146px;
+	height: 330px;
 	background-color: black;
 	margin: 40px auto;
 	font-family: 'monacoregular';
@@ -334,7 +334,7 @@ body{
 	width: 100%;
     margin: 0;
     /* float: left; */
-    white-space: pre-line;
+    /*white-space: pre-line;*/
     line-height: 18px;
     font-family: 'monacoregular';
     font-size: 13px;
@@ -347,7 +347,27 @@ body{
 }
 
 [data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-syntax-violet{
-	color: #a21da3;
+	color: #770088;
+}
+
+[data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-syntax-white{
+	color: #ffffff;
+}
+
+[data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-syntax-bright-blue{
+	color: #0000ff;
+}
+
+[data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-syntax-blue{
+	color: #0055aa;
+}
+
+[data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-syntax-red{
+	color: #aa1111;
+}
+
+[data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-syntax-purple{
+	color: #5227b7;
 }
 
 [data-device] #page-content .section.beta .diagram-editor .editor-column-code pre .editor-tab{
@@ -377,7 +397,7 @@ body{
 }
 
 [data-device] #page-content .section.beta .diagram-details-column:nth-of-type(1){
-	padding: 0 20px 0 30px;
+	padding: 0 20px 0 50px;
 }
 
 [data-device] #page-content .section.beta .diagram-details-column:nth-of-type(3),

@@ -290,7 +290,7 @@ background-image: url('//phomeo.com/contest/data/4/winner.png');
  --*/
  #phomio-photo-container{
  	position: relative;
-    height: 679px;
+    height: 400px;
  }
 
  #phomio-photo-container *{
@@ -305,7 +305,7 @@ background-image: url('//phomeo.com/contest/data/4/winner.png');
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     display: inline-block;
-    margin: 20px 10px;
+    margin: 20px 0px;
     padding: 10px 10px;
     padding-bottom: 0px;
     vertical-align: top;
