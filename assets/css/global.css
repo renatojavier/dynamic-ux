@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 }
 
 #site-logo-group > a{
-    height: 100%;
+    /* height: 100%; */
     display: block;
 }
 
@@ -129,12 +129,14 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 }
 
 @viewport{
-    
+	/*- meta viewport pragma for `user-scalable=no` is not working on ios 10 -*/
+    user-zoom: fixed;
 }
 
 
 @-ms-viewport{
-    
+	/*- meta viewport pragma for `user-scalable=no` is not working on ios 10 -*/
+    user-zoom: fixed;
 }
 
 @-moz-document url-prefix(){

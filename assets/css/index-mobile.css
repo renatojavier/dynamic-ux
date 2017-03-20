@@ -56,8 +56,8 @@
 	[data-device="mobile"] #top-bar #top-bar-email{
 		display: inline !important;
 	    float: right;
-	    margin-top: -28px;
-	    font-size: 11px;
+	    margin-top: -36px;
+	    font-size: 14px;
 	}
 
 	/*--
@@ -92,6 +92,7 @@
 	    z-index: 1;
 	    position: relative;
 	    padding: 15px 20px;
+	    box-shadow: 0 -5px 5px rgba(0,0,0,0.2);
 	}
 
 	[data-device="mobile"] #portfolio-container .portfolio .column-text-tagline{

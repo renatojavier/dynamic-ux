@@ -7,7 +7,7 @@ body{
 
 [data-device] .container .inner{
 	width: 1000px;
-	min-height: 100px;
+	height: 100px;
 	margin: 0 auto;
 }
 
@@ -149,7 +149,7 @@ body{
 
 [data-device] #page-content .section-title{
 	font-size: 35px;
-	text-shadow: 0 3px 6px black;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 0;
@@ -295,6 +295,7 @@ body{
 
 [data-device] #page-content .section.charlie #img_c_wmb_logo{
 	margin-top: 100px;
+    padding-bottom: 200px;
 }
 
 /*--

@@ -207,7 +207,7 @@
 	}
 
 	[data-device="mobile"] #page-content .section.beta #img_b_wmb_rating_chart{
-		width: 35px;
+		/*width: 35px;*/
 	    margin-bottom: 15px;
 	}
 
