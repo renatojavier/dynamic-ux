@@ -1,9 +1,19 @@
+- we need a breakpoint for ipads/tablets that will just scale down the desktop version to fit. Are we using media queries? I was looknig at this post: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
+- The simple/complex buttons should change to their down state immediately when clicked, not after they reach their scroll point
+
+- Critical issue with scrolling on mobile. See this video: dyn.am/renato/mobilescrollissue.mp4
+
+- Still able to scale mobile site with pinch to zoom
+
+---
+
 -+ Page still loading in wrong place on mobile
-- phones need to be same height on index
+-+ phones need to be same height on index
 -+ remove 1 px line above CC block on index
 -+ background area of index page should be white
 -+ Pages should not be scalable on mobile!
-- Responsive site
+-+ Responsive site
 
 ---
 
@@ -100,3 +110,17 @@ Extra payment changes +$35:
 - add toms Phomio styles via html
 - copy in product selector from existing files
 - copy in video player from existing files that scales with mobile, autoplay muted by default, no autoplay on mobile
+
+----------------------
+IOS10 
+----------------------
+function ios_ver (){
+	var ios_ua = navigator.userAgent;
+	if( ios_ua.indexOf("iPhone") > 0 ) {
+		ios_ua.match(/iPhone OS (\w+)/g);
+		var version = RegExp.$1.split("_")[0];
+		return version;
+	}
+}
+
+if (ios_ver() === '10') {}

@@ -6,15 +6,23 @@ window.app = {
 		window.app.wmbPlaybackOnce = true;
 		window.preload_flag = true;
 
+		var rs = {};
+
 		this.loadMozCSS();
 		this.counterFOUC();
 
-		
 		this.wmbStartMainVideo();
 
 		this.responsivePolyfill.init();
 		this.switcher.initialize();
+
+		this.disablePinchZooming();
 		// if( window.__device.phone() !== null ) TweenLite.to(window, 0.01, { scrollTo: 0 });
+	},
+
+	disablePinchZooming : function(){
+		var hammertime = new Hammer(document.body, { preventDefault : true })
+		.get('pinch').set({ enable: false });
 	},
 
 	responsivePolyfill : {
@@ -198,11 +206,46 @@ window.app = {
 
 	switcher : {
 
+		manualScroll : true,
+
 		initialize : function( self, pages ){
 			self = this;
-			pages = ['cc','wmb','phomio'];
-			this.application();
+			this.beta();
+			// this.application();
 			this.scrollspy();
+		},
+
+		/*--
+		 - issue:
+		 - onClick vs scroll watch
+		 --*/
+		beta : function( self ){
+			self = this;
+
+			$('#switch-complex').on('click', function(){
+
+				// self.manualScroll = false;
+				// $(this).addClass('active-switch').siblings().removeClass('active-switch');
+				
+
+				// window.cancelAnimationFrame(rs);
+				document.querySelector('#section-complex').scrollIntoView({ behavior: 'smooth' });
+
+				return false;
+			});
+
+			$('#switch-simple').on('click', function(){
+
+				// self.manualScroll = false;
+				// $(this).addClass('active-switch').siblings().removeClass('active-switch');
+				
+
+				// window.cancelAnimationFrame(rs);
+				document.querySelector('#section-simple').scrollIntoView({ behavior: 'smooth' });
+
+				return false;
+			});
+
 		},
 
 		application : function(){
@@ -231,7 +274,9 @@ window.app = {
 
 		},
 
-		scrollspy : function(){
+		scrollspy : function(self){
+			self = this;
+
 			$(window).scrollTop(0);
 
 			if( ! $('[data-switch]').length ) return;
@@ -282,14 +327,20 @@ window.app = {
 				});
 			}
 
-			window.addEventListener('scroll', function(e){
+			$(window).scroll(function(e, w){
 				last_known_scroll_position = window.scrollY;
 
+				// if( !self.manualScroll ) return;
+
+				// console.log( (e.originalEvent) ? 'manual' : 'program');
+
 				if( !ticking ){
-					window.requestAnimationFrame(function() {
+					rs = window.requestAnimationFrame(function() {
 						optimizedScroll(last_known_scroll_position);
 						ticking = false;
 					});
+
+					
 				}
 
 				ticking = true;
