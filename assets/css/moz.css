@@ -19,8 +19,6 @@
 	}
 
 	[data-device="mobile"] #top-bar #site-logo-group img#site-logo{
-		margin-top: -3px;
+		/*margin-top: -3px;*/
 	}
-
-
 }

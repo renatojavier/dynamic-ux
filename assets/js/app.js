@@ -5,7 +5,6 @@ window.app = {
 	initialize : function(){
 		window.app.wmbPlaybackOnce = true;
 		window.preload_flag = true;
-		var rs = {};
 
 		this.loadMozCSS();
 		this.counterFOUC();
@@ -210,6 +209,7 @@ window.app = {
 	hgt_topbar : 0,
 	hgt_m_switcher : 0,
 	breakpoints : new Array,
+	manualScroll : true,
 
 	switcher : {
 
@@ -232,8 +232,8 @@ window.app = {
 					
 					var top = window.app.breakpoints[ $(this).data('switch') ]; //$( '#section-' + $(this).data('switch') ).offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) );
 
-					// self.manualScroll = false;
-					// $(this).addClass('active-switch').siblings().removeClass('active-switch');
+					window.app.manualScroll = false;
+					$(this).addClass('active-switch').siblings().removeClass('active-switch');
 
 					window.scroll({ top: top, left: 0, behavior: 'smooth' });
 
@@ -293,9 +293,9 @@ window.app = {
 				return false;
 			}).trigger('resize');
 
-			console.log(window.app.hgt_m_switcher);
-
 			function optimizedScroll( y ){
+				if( ! window.app.manualScroll ) return;
+
 				if( y >= 0 && y <= window.app.breakpoints['complex'] ){
 					highlight(false);
 				}else if( y >= window.app.breakpoints['complex'] && y <= window.app.breakpoints['simple'] ){
@@ -305,7 +305,6 @@ window.app = {
 				}
 
 				// self.logger();
-
 				window.app.wmbPlayBack(y);
 			}
 
@@ -323,10 +322,7 @@ window.app = {
 			}
 
 			$(window).scroll(function(e, w){
-				last_known_scroll_position = window.scrollY + (10 * window.app.cal);
-
-				// if( !self.manualScroll ) return;
-				// console.log( (e.originalEvent) ? 'manual' : 'program');
+				last_known_scroll_position = window.scrollY + ( 10 * window.app.cal );
 
 				if( !ticking ){
 					window.requestAnimationFrame(function() {
@@ -334,7 +330,17 @@ window.app = {
 						ticking = false;
 					});
 				}
-				ticking = true;
+
+				window.clearTimeout( $.data( this, "scrollCheck" ) );
+
+    			$.data( this, "scrollCheck", window.setTimeout(function(){
+    				if( ! window.app.manualScroll ){
+    					window.app.manualScroll = true;
+    				}
+
+    			}, 250) );
+
+    			ticking = true;
 			});
 
 		},

@@ -2,9 +2,9 @@
 
 - The simple/complex buttons should change to their down state immediately when clicked, not after they reach their scroll point
 
-- Critical issue with scrolling on mobile. See this video: dyn.am/renato/mobilescrollissue.mp4
+-+ Critical issue with scrolling on mobile. See this video: dyn.am/renato/mobilescrollissue.mp4
 
-- Still able to scale mobile site with pinch to zoom
+-+ Still able to scale mobile site with pinch to zoom
 
 ---
 
