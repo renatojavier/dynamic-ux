@@ -124,3 +124,5 @@ function ios_ver (){
 }
 
 if (ios_ver() === '10') {}
+
+document.getElementById('section-simple').scrollIntoView({behavior : 'smooth' });

@@ -5,6 +5,7 @@ window.app = {
 	initialize : function(){
 		window.app.wmbPlaybackOnce = true;
 		window.preload_flag = true;
+
 		var rs = {};
 
 		this.loadMozCSS();
@@ -16,10 +17,12 @@ window.app = {
 		this.switcher.initialize();
 
 		this.disablePinchZooming();
+		// if( window.__device.phone() !== null ) TweenLite.to(window, 0.01, { scrollTo: 0 });
 	},
 
-	disablePinchZooming : function( hammertime ){
-		hammertime = new Hammer(document.body, { preventDefault : true }).get('pinch').set({ enable: false });
+	disablePinchZooming : function(){
+		var hammertime = new Hammer(document.body, { preventDefault : true })
+		.get('pinch').set({ enable: false });
 	},
 
 	responsivePolyfill : {
@@ -187,8 +190,6 @@ window.app = {
 			if( $('html').data('device') === 'desktop' || $('html').data('device') === 'mobile' ){
 				//window.setTimeout(function(){
 				document.body.style.display = 'block';
-				// window.app.switcher.onClick();
-				// window.app.switcher.scrollspy();
 				//}, 150 );
 
 				window.cancelAnimationFrame(raf);
@@ -203,50 +204,50 @@ window.app = {
 			$('body').append('<link rel="stylesheet" type="text/css" href="assets/css/moz.css">');
 	},
 
-	/*--
-	 - global properties
-	 --*/
-	cal : 1,
-	hgt_topbar : 0,
-	hgt_m_switcher : 0,
-	breakpoints : new Array,
-
 	switcher : {
 
-		initialize : function(){
+		manualScroll : true,
+
+		initialize : function( self, pages ){
+			self = this;
+			this.beta();
+			// this.application();
 			this.scrollspy();
-			this.onClick();
 		},
 
 		/*--
-		 - issue instant down state on click:
+		 - issue:
 		 - onClick vs scroll watch
 		 --*/
-		onClick : function( self ){
+		beta : function( self ){
 			self = this;
 
-			$('.switcher').each(function(){
+			$('#switch-complex').on('click', function(){
 
-				$(this).find( '[data-switch]' )
-				.on('click', function(){
-					
-					var top = window.app.breakpoints[ $(this).data('switch') ]; //$( '#section-' + $(this).data('switch') ).offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) );
-
-					// self.manualScroll = false;
-					// $(this).addClass('active-switch').siblings().removeClass('active-switch');
-
-					window.scroll({ top: top, left: 0, behavior: 'smooth' });
-
-					return false;
-				});
+				// self.manualScroll = false;
+				// $(this).addClass('active-switch').siblings().removeClass('active-switch');
 				
+
+				// window.cancelAnimationFrame(rs);
+				document.querySelector('#section-complex').scrollIntoView({ behavior: 'smooth' });
+
+				return false;
 			});
-			
+
+			$('#switch-simple').on('click', function(){
+
+				// self.manualScroll = false;
+				// $(this).addClass('active-switch').siblings().removeClass('active-switch');
+				
+
+				// window.cancelAnimationFrame(rs);
+				document.querySelector('#section-simple').scrollIntoView({ behavior: 'smooth' });
+
+				return false;
+			});
+
 		},
 
-		/*--
-		 - module dropped
-		 --*/
 		application : function(){
 			var controller = new ScrollMagic.Controller()
 			,	scene = new ScrollMagic.Scene({ 
@@ -269,42 +270,46 @@ window.app = {
 						history.pushState("", document.title, id);
 					}
 				}
-			});
+			});		
+
 		},
 
 		scrollspy : function(self){
 			self = this;
 
+			$(window).scrollTop(0);
+
 			if( ! $('[data-switch]').length ) return;
 
-			var ticking = false
-			,	last_known_scroll_position = 0;
+			var cal = ( $('[data-responsive=1]').length ) ? 1 / ( window.app.responsivePolyfill.scale - 0.5 ) : 1;
+			// console.log('calibration: '+cal);
+			var theme = $('html').data('theme')
+			,	hgt_topbar = $('#top-bar').height() + 1
+			,	hgt_m_switcher = ( window.__device.phone() === null ) ? 0 : $('.switcher-mobile').height() + 10
+			,	breakpoints = {
+				'challenge' : $('#section-challenge').offset().top - ( ( hgt_topbar * cal ) + ( hgt_m_switcher * cal ) ),
+				'complex' : $('#section-complex').offset().top - ( ( hgt_topbar * cal ) + ( hgt_m_switcher * cal ) ),
+				'simple' : $('#section-simple').offset().top - ( ( hgt_topbar * cal ) + ( hgt_m_switcher * cal ) )
+			}
+			,	last_known_scroll_position = 0
+			,	ticking = false;
 
-			$(window).on('resize', function(){
+			// console.info('Challenge: ' +breakpoints['challenge']);
+			// console.info('Complex: ' +breakpoints['complex']);
+			// console.info('Simple: ' +breakpoints['simple']);
 
-				window.app.cal = ( $('[data-responsive=1]').length ) ? 1 / ( window.app.responsivePolyfill.scale - ( window.app.responsivePolyfill.scale * 0.5 ) ) : 1;
-				window.app.hgt_topbar = $('#top-bar').height() + 1;
-				window.app.hgt_m_switcher = ( window.__device.phone() === null ) ? 0 : $('.switcher-mobile').height() + 10;
-
-				window.app.breakpoints['challenge'] = ( $('#section-challenge').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
-				window.app.breakpoints['complex'] = ( $('#section-complex').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
-				window.app.breakpoints['simple'] = ( $('#section-simple').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
-
-				return false;
-			}).trigger('resize');
-
-			console.log(window.app.hgt_m_switcher);
+			// console.info(hgt_topbar);
+			// console.info(hgt_m_switcher);
 
 			function optimizedScroll( y ){
-				if( y >= 0 && y <= window.app.breakpoints['complex'] ){
+				//console.log(y);
+				if( y >= 0 && y <= breakpoints['complex'] ){
 					highlight(false);
-				}else if( y >= window.app.breakpoints['complex'] && y <= window.app.breakpoints['simple'] ){
+				}else if( y >= breakpoints['complex'] && y <= breakpoints['simple'] ){
 					highlight('#switch-complex');
-				}else if(y > window.app.breakpoints['simple']){
+				}else if(y > breakpoints['simple']){
 					highlight('#switch-simple');
 				}
-
-				// self.logger();
 
 				window.app.wmbPlayBack(y);
 			}
@@ -323,30 +328,24 @@ window.app = {
 			}
 
 			$(window).scroll(function(e, w){
-				last_known_scroll_position = window.scrollY + (10 * window.app.cal);
+				last_known_scroll_position = window.scrollY;
 
 				// if( !self.manualScroll ) return;
+
 				// console.log( (e.originalEvent) ? 'manual' : 'program');
 
 				if( !ticking ){
-					window.requestAnimationFrame(function() {
+					rs = window.requestAnimationFrame(function() {
 						optimizedScroll(last_known_scroll_position);
 						ticking = false;
 					});
+
+					
 				}
+
 				ticking = true;
 			});
 
-		},
-
-		logger : function(){
-			console.info('Challenge: ' + window.app.breakpoints['challenge']);
-			console.info('Complex: ' + window.app.breakpoints['complex']);
-			console.info('Simple: ' + window.app.breakpoints['simple']);
-
-			console.info(window.app.hgt_topbar);
-			console.info(window.app.hgt_m_switcher);
-			console.info(window.app.cal);
 		}
 
 	}
