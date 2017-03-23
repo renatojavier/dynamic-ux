@@ -126,7 +126,7 @@
 						<h2 class="section-title">Details</h2>
 						<div class="section-content">
 							<p class="textual-content">Phomio has many applications across different business sectors. In order to provide awesome flexibility to clients, I designed special persistent data on a per user basis.</p>
-                            <p class="textual-content">For example, a pet groomer used Phomio for a Pet photo contest. Each pet was randomly assigned a “signature” paw print image upon approval. If two separate submissions had matching pet names and entry email addresses, the paws print images would be the same for consistency. This all happens behind the scenes so users experience simplicity, but I push to make sure these type of details get included in my products.</p>
+                            <p class="textual-content">For example, a pet groomer used Phomio for a Pet photo contest. Each pet was randomly assigned a “signature” paw print image upon approval. If two separate submissions had matching pet names and entry email addresses, the paw print images would be the same for consistency. This all happens behind the scenes so users experience simplicity, but I push to make sure these type of details get included in my products.</p>
 							<figure class="section-diagram diagram-details">
 								<section class="diagram-details-column">
 									<img src="assets/img/dog1.jpg" id="img_b_dog1">
@@ -576,14 +576,16 @@
 		<script src="assets/js/lib/mobile-detect.min.js"></script>
 		<script>
 			window.__device = new MobileDetect( window.navigator.userAgent );
+			var device, mobileOS;
 
-			document
-			.querySelector('html')
-			.setAttribute('data-device', ( window.__device.phone() === null ) ? 'desktop' : 'mobile' );
-
-			document
-			.querySelector('html')
-			.setAttribute('data-os', (window.__device.os() === "iOS") ? 'ios' : 'android' );
+			if( window.__device.phone() === null || window.__device.tablet() !== null ){
+				device = 'desktop';
+				document.querySelector('meta[name=viewport]').setAttribute('content', 'width=device-width, minimum-scale=1.0, maximum-scale=10.0, user-scalable=0');
+			}else{
+				device = 'mobile';
+				document.querySelector('html').setAttribute('data-os', ( window.__device.os() === 'iOS' ) ? 'ios' : 'android' );
+			}
+			document.querySelector('html').setAttribute( 'data-device', device );
 		</script>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>

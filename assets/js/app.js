@@ -23,7 +23,10 @@ window.app = {
 
 	responsivePolyfill : {
 
-		breakpoint : 425,
+		breakpoint : {
+			mobile : 600,
+			tablet : 768
+		},
 		viewport : 320,
 		vw : $( window ).width(),
 		scale : 1,
@@ -44,11 +47,12 @@ window.app = {
 			self = this;
 
 			self.vw = $( window ).width();
+			self.viewport = ( self.vw <= self.breakpoint['mobile'] ) ? 320 : 1024;
 			self.scale = (self.vw >= self.viewport) ? self.vw / self.viewport : 1;
 
 			var offset_a = 0;
 
-			if( self.vw <= self.breakpoint ){
+			if( self.vw <= self.breakpoint['mobile'] ){
 
 				document.querySelector('html').setAttribute('data-device', 'mobile');
 				document.querySelector('html').setAttribute('data-responsive', '1');
@@ -97,6 +101,10 @@ window.app = {
 				TweenLite.set('#page-content', {
 					marginTop : ( ! $('[data-portfolio=index]').length ) ? 112 : 'auto',
 				});
+
+				// if(self.vw >= self.breakpoint['mobile'] && self.vw <= self.breakpoint['tablet']){
+				// 	console.log(self.scale);
+				// }
 
 			}
 			
@@ -199,7 +207,7 @@ window.app = {
 
 	loadMozCSS : function(){
 		if( window.__device.phone() === null )
-			$('body').append('<link rel="stylesheet" type="text/css" href="assets/css/moz.css">');
+			$('head').append('<link rel="stylesheet" type="text/css" href="assets/css/moz.css">');
 	},
 
 	/*--

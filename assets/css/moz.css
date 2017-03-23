@@ -21,4 +21,31 @@
 	[data-device="mobile"] #top-bar #site-logo-group img#site-logo{
 		/*margin-top: -3px;*/
 	}
+
+	/*-- wmb --*/
+	[data-device] #user-address-viewer{
+		top: 43px;
+	}
+
+	[data-device] #qr-aside-1{
+		top: 90px;
+	}
+
+	[data-device] #qr-aside-2 {
+    	top: 239px;
+    }
+
+	[data-device] #user-address-wmb {
+    	top: 200px;
+   	}
+
+   	[data-device] #df-label-2 {
+    	top: 279px;
+    }
+
+    [data-device] #qr-aside-4 {
+    	right: 58px;
+	}
+
+
 }

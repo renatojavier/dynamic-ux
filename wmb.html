@@ -46,6 +46,56 @@
 
 				<section class="section alpha" id="section-challenge">
 					<div class="inner">
+						<h2 class="section-title">Data Vizualization</h2>
+						<div class="section-content">
+							<p class="textual-content">Gathering data is one thing, making it useful to the is customer another. Dealing with many combinations of cutting edge technologies, I had to develop new ways to demonstrate mission critical data to users, in ways that are both easy to understand and flexible to their needs.
+							</p>
+							<figure class="section-diagram diagram-visualn">
+								<div id="visualn-container">
+
+									<img class="user-thumb" id="user-thumb-viewer" alt="" src="assets/img/wmb_viewer.jpg">
+									<img class="user-thumb" id="user-thumb-wmb" alt="" src="assets/img/wmb_abr_logo.png">
+									<img class="user-thumb" id="user-thumb-bob" alt="" src="assets/img/wmb_bob.jpg">
+									<img class="user-thumb" id="user-thumb-rob" alt="" src="assets/img/wmb_rob.jpg">
+
+									<p class="user-address" id="user-address-viewer">Viewer Address</p>
+									<p class="user-address" id="user-address-wmb">WMB Address</p>
+									<p class="user-address" id="user-address-bob">Bob Address</p>
+									<p class="user-address" id="user-address-rob">Rob Address</p>
+
+									<img class="qr-img" id="qr-img-1" alt="" src="assets/img/wmb_qr1.jpg">
+									<img class="qr-img" id="qr-img-2" alt="" src="assets/img/wmb_qr2.jpg">
+									<img class="qr-img" id="qr-img-3" alt="" src="assets/img/wmb_qr3.jpg">
+									<img class="qr-img" id="qr-img-4" alt="" src="assets/img/wmb_qr4.jpg">
+
+									<p class="qr-aside" id="qr-aside-1">1CH3JMqkWUqsRMk4p7TjEWhuWXbLTMMkdG</p>
+									<p class="qr-aside" id="qr-aside-2">1g7mh6hCkZCJLiiBe4soyV3NARvmLZH1H</p>
+									<p class="qr-aside" id="qr-aside-3">159fweJ3NipSZAAQX3vnPhHspSWgZYUJnD</p>
+									<p class="qr-aside" id="qr-aside-4">1AJv7tP1QFLNmwSrVaQzAmVqNBhqFekxur</p>
+
+									<p class="df-label" id="df-label-1">Viewer Payment<br>for Video</p>
+									<p class="df-label" id="df-label-2">Payment to<br>Creator Account<br>minus platform fees</p>
+									<p class="df-label" id="df-label-3">Split<br> Payouts</p>
+
+									<img class="df-arrow" id="df-arrow-down-1" src="assets/img/arrow_black_down_short.png" alt="">
+									<img class="df-arrow" id="df-arrow-down-2" src="assets/img/arrow_black_down_short.png" alt="">
+									<img class="df-arrow" id="df-arrow-down-3" src="assets/img/arrow_black_down_short.png" alt="">
+									<img class="df-arrow" id="df-arrow-down-4" src="assets/img/arrow_black_down_short.png" alt="">
+									<span id="arrow-4-tail"></span>
+									<img class="df-arrow" id="df-arrow-down-left" src="assets/img/arrow_black_down_left.png" alt="">
+									<img class="df-arrow" id="df-arrow-down-right" src="assets/img/arrow_black_down_right.png" alt="">
+
+									<img id="split-dropdown" src="assets/img/wmb_split_select.png" alt="">
+
+									<span class="df-btc" id="df-btc-1">0.00083880 BTC</span>
+									<span class="df-btc" id="df-btc-2">0.00081090 BTC</span>
+									<span class="df-btc" id="df-btc-3">0.00048654 BTC</span>
+									<span class="df-btc" id="df-btc-4">0.00032436 BTC</span>
+								</div>
+
+							</figure>
+						</div>
+
 						<h2 class="section-title">Challenge</h2>
 						<div class="section-content">
 							<ul class="textual-content">
@@ -186,14 +236,16 @@
 		<script src="assets/js/lib/mobile-detect.min.js"></script>
 		<script>
 			window.__device = new MobileDetect( window.navigator.userAgent );
+			var device, mobileOS;
 
-			document
-			.querySelector('html')
-			.setAttribute('data-device', ( window.__device.phone() === null ) ? 'desktop' : 'mobile' );
-
-			document
-			.querySelector('html')
-			.setAttribute('data-os', (window.__device.os() === "iOS") ? 'ios' : 'android' );
+			if( window.__device.phone() === null || window.__device.tablet() !== null ){
+				device = 'desktop';
+				document.querySelector('meta[name=viewport]').setAttribute('content', 'width=device-width, minimum-scale=1.0, maximum-scale=10.0, user-scalable=0');
+			}else{
+				device = 'mobile';
+				document.querySelector('html').setAttribute('data-os', ( window.__device.os() === 'iOS' ) ? 'ios' : 'android' );
+			}
+			document.querySelector('html').setAttribute( 'data-device', device );
 		</script>
 		
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>

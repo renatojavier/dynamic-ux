@@ -1,6 +1,6 @@
 - we need a breakpoint for ipads/tablets that will just scale down the desktop version to fit. Are we using media queries? I was looknig at this post: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
 
-- The simple/complex buttons should change to their down state immediately when clicked, not after they reach their scroll point
+-+ The simple/complex buttons should change to their down state immediately when clicked, not after they reach their scroll point
 
 -+ Critical issue with scrolling on mobile. See this video: dyn.am/renato/mobilescrollissue.mp4
 
@@ -126,3 +126,23 @@ function ios_ver (){
 if (ios_ver() === '10') {}
 
 document.getElementById('section-simple').scrollIntoView({behavior : 'smooth' });
+
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>-->
+
+
+
+<script>
+			window.__device = new MobileDetect( window.navigator.userAgent );
+			var device, mobileOS;
+
+			if( window.__device.phone() === null || window.__device.tablet() !== null ){
+				device = 'desktop';
+				document.querySelector('meta[name=viewport]').setAttribute('content', 'width=device-width, minimum-scale=1.0, maximum-scale=10.0, user-scalable=0');
+			}else{
+				device = 'mobile';
+				document.querySelector('html').setAttribute('data-os', ( window.__device.os() === 'iOS' ) ? 'ios' : 'android' );
+			}
+			document.querySelector('html').setAttribute( 'data-device', device );
+		</script>

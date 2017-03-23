@@ -134,14 +134,16 @@
 		<script src="assets/js/lib/mobile-detect.min.js"></script>
 		<script>
 			window.__device = new MobileDetect( window.navigator.userAgent );
+			var device, mobileOS;
 
-			document
-			.querySelector('html')
-			.setAttribute('data-device', ( window.__device.phone() === null ) ? 'desktop' : 'mobile' );
-
-			document
-			.querySelector('html')
-			.setAttribute('data-os', (window.__device.os() === "iOS") ? 'ios' : 'android' );
+			if( window.__device.phone() === null || window.__device.tablet() !== null ){
+				device = 'desktop';
+				document.querySelector('meta[name=viewport]').setAttribute('content', 'width=device-width, minimum-scale=1.0, maximum-scale=10.0, user-scalable=0');
+			}else{
+				device = 'mobile';
+				document.querySelector('html').setAttribute('data-os', ( window.__device.os() === 'iOS' ) ? 'ios' : 'android' );
+			}
+			document.querySelector('html').setAttribute( 'data-device', device );
 		</script>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
