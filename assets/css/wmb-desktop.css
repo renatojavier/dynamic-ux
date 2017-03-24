@@ -547,7 +547,7 @@ body{
 [data-device] #df-arrow-down-3,
 [data-device] #df-arrow-down-4,
 [data-device] #arrow-4-tail{
-	display: none;
+	display: none !important;
 }
 
 [data-device] #df-arrow-down-left{

@@ -74,7 +74,7 @@
 	    height: 62px;
 	    background-color: rgba(246, 191, 2, 0.95);
 	    box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-	    z-index: 1;
+	    z-index: 3;
 	}
 
 	[data-device="mobile"] #switcher-inner a{ text-decoration: none; }
@@ -520,7 +520,7 @@
 	[data-device="mobile"] #arrow-4-tail{
 	    width: 2px;
 	    background-color: black;
-	    display: block;
+	    display: block !important;
 	    height: 108px;
 	    top: 327px;
 	    left: 185px;
