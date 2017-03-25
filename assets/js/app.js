@@ -24,7 +24,7 @@ window.app = {
 	responsivePolyfill : {
 
 		breakpoint : {
-			mobile : 600,
+			mobile : 425,
 			tablet : 768
 		},
 		viewport : 320,
@@ -33,17 +33,38 @@ window.app = {
 		watch :null,
 
 		init : function(self){
-			if( window.__device.phone() !== null ) return;
-
 			self = this;
+
 			this.resizeHandler();
+			this.resizeHandlerTablet();
 
 			window.addEventListener( 'resize', function(){
 				self.resizeHandler();
+				self.resizeHandlerTablet();
 			}, false );
 		},
 
+		resizeHandlerTablet : function( self, viewport ){
+			self = this;
+			viewport = 1000;
+
+			if( $('[data-device=mobile]').length || $(window).width() >= viewport){
+				TweenLite.set('html', {
+					css : { zoom : 1 }
+				});
+				return;
+			}
+
+			self.scale = $(window).width() / viewport;
+
+			TweenLite.set('html', {
+				css : { zoom : self.scale }
+			});
+		},
+
 		resizeHandler : function( self ){
+
+			if( window.__device.phone() !== null ) return;
 			self = this;
 
 			self.vw = $( window ).width();
@@ -101,10 +122,6 @@ window.app = {
 				TweenLite.set('#page-content', {
 					marginTop : ( ! $('[data-portfolio=index]').length ) ? 112 : 'auto',
 				});
-
-				// if(self.vw >= self.breakpoint['mobile'] && self.vw <= self.breakpoint['tablet']){
-				// 	console.log(self.scale);
-				// }
 
 			}
 			
