@@ -384,7 +384,7 @@
 	}
 
 	[data-device="mobile"] #user-address-wmb {
-		top: 133px;
+		top: 133px !important;
     	left: 152px;
 	}
 

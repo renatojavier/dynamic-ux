@@ -47,5 +47,29 @@
     	right: 58px;
 	}
 
+	[data-device="mobile"] #user-address-viewer {
+	    top: 11px;
+	}
+
+	[data-device="mobile"] #qr-aside-1 {
+	    top: 46px;
+	}
+
+	[data-device="mobile"] #df-label-1 {
+	    top: 74px;
+	    left: 52px;
+	}
+
+	[data-device="mobile"] #qr-aside-2 {
+    	top: 163px;
+    }
+
+    [data-device="mobile"] #df-label-2 {
+	    top: 181px;
+	}
+
+	[data-device="mobile"] #qr-aside-4{
+		right: 29px;
+	}
 
 }

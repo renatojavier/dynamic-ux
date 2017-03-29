@@ -87,7 +87,11 @@ window.app = {
 
 				TweenLite.set('#viewport #portfolio-container', {
 					marginTop: 0
-				});			
+				});
+
+				TweenLite.set('html, body', {
+					height: 'auto'
+				});		
 					
 			}else if( self.vw > self.breakpoint['mobile'] && self.vw <= self.breakpoint['tablet'] ){
 				document.querySelector('html').setAttribute('data-device', 'desktop');
@@ -108,7 +112,11 @@ window.app = {
 
 				TweenLite.set('#viewport #portfolio-container', {
 					marginTop: 100 * self.scale
-				});				
+				});
+
+				TweenLite.set('html, body', {
+					height: self.scale * document.body.clientHeight
+				});			
 			}else{
 				document.querySelector('html').setAttribute('data-device', 'desktop');
 				document.querySelector('html').setAttribute('data-responsive', '0');
@@ -131,6 +139,10 @@ window.app = {
 
 				TweenLite.set('#viewport #portfolio-container', {
 					marginTop: 100
+				});
+
+				TweenLite.set('html, body', {
+					height: 'auto'
 				});
 
 			}
