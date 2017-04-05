@@ -162,29 +162,35 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 /*-- Page transition --*/
 .effect{
 	-webkit-animation-duration: 0.25s;
-	-moz-animation-duration: 0.25s;
 	animation-duration: 0.25s;
     -webkit-transition-timing-function: ease-in;
-    -moz-transition-timing-function: ease-in;
     transition-timing-function: ease-in;
     -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 
 .effect_slide-right{
 	-webkit-animation-name: slideRight;
-	-moz-animation-name: slideRight;
 	animation-name: slideRight;
+}
+
+[data-os] .effect_slide-right{
+	-webkit-animation-name: _slideRight;
+	animation-name: _slideRight;
 }
 
 .effect_slide-right-fade-out{
 	-webkit-animation-duration: 0.35s;
-	-moz-animation-duration: 0.35s;
 	animation-duration: 0.35s;
 	-webkit-animation-name: slideRightFadeOut;
-	-moz-animation-name: slideRightFadeOut;
 	animation-name: slideRightFadeOut;
+}
+
+[data-os] .effect_slide-right-fade-out{
+	-webkit-animation-duration: 0.35s;
+	animation-duration: 0.35s;
+	-webkit-animation-name: _slideRightFadeOut;
+	animation-name: _slideRightFadeOut;
 }
 
 .is-exiting .effect{
@@ -194,14 +200,6 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 }
 
 @-webkit-keyframes slideRight{
-	from{
-		left: -100%;
-	}
-	to{
-		left: 0;
-	}
-}
-@-moz-keyframes slideRight{
 	from{
 		left: -100%;
 	}
@@ -231,7 +229,7 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 		left: 0;
 	}
 }
-@-moz-keyframes slideRightFadeOut{
+@keyframes slideRightFadeOut{
 	0%{
 		opacity: 0;
 		left: -100%;
@@ -244,16 +242,50 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 		left: 0;
 	}
 }
-@keyframes slideRightFadeOut{
+
+/*-- mobile gpu --*/
+@-webkit-keyframes _slideRight{
+	from{
+		-webkit-transform: translate3d(-100%,0,0);
+	}
+	to{
+		-webkit-transform: initial;
+	}
+}
+
+@keyframes _slideRight{
+	from{
+		transform: translate3d(-100%,0,0);
+	}
+	to{
+		transform: initial;
+	}
+}
+
+@-webkit-keyframes _slideRightFadeOut{
 	0%{
 		opacity: 0;
-		left: -100%;
+		-webkit-transform: translate3d(-100%,0,0);
 	}
 	75%{
 		opacity: 0;
 	}
 	100%{
 		opacity: 1;
-		left: 0;
+		-webkit-transform: initial;
+	}
+}
+
+@keyframes _slideRightFadeOut{
+	0%{
+		opacity: 0;
+		transform: translate3d(-100%,0,0);
+	}
+	75%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+		transform: initial;
 	}
 }
