@@ -1,0 +1,318 @@
+@import url(../../site.css);
+
+/*--------------------
+ * Slider
+ *--------------------*/
+
+#wp-slider{
+    position: relative;
+    margin-top: 54px;
+    width: 100%;
+    height: 400px;
+    max-height: 400px !important;
+    background: transparent;
+    
+    overflow: hidden;
+}
+
+#wp-slider > .scroller{
+    position: relative;
+    height: 100%;
+}
+
+#wp-slider .slide{
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    
+    background-size: 100% auto !important;
+    
+    max-height: 400px;
+    overflow: hidden;
+    
+    opacity: 0;
+    
+    -webkit-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+/* slideshow cross-fade */
+#wp-slider .opaque{
+    opacity: 1;
+}
+
+#wp-slider .slide:first-of-type{
+    margin-left: 0px;
+    opacity: 1;
+    display: inline-block;
+}
+
+#wp-slider .slide .center-block{
+    position: relative;
+    max-width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* slide controller */
+#wp-slider .wp-slider-ctrl{
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    
+    top: 50%;
+    left: 50%;
+    
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.wp-slider-ctrl > div{
+    position: absolute;
+    width: 60px;
+    height: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.wp-slider-ctrl > div:hover{
+    opacity: 0.89;
+}
+
+.wp-slider-ctrl > div:active{
+    opacity: 1;
+}
+
+.wp-slider-ctrl .slider-ctrl:nth-of-type(1){
+    left: 20px;
+    background: url(../../images/slide_arrow_left.png) no-repeat center center;
+    background-size: 60px 60px;
+}
+
+.wp-slider-ctrl .slider-ctrl:nth-of-type(2){
+    right: 20px;
+    background: url(../../images/slide_arrow_right.png) no-repeat center center;
+    background-size: 60px 60px;
+}
+
+/* Featured content */
+#wp-content{
+    background: #1b1b1b;
+    position: relative;
+    width: 100%;
+    
+    box-shadow: 0 -3px 10px #333;
+    
+    overflow: hidden;
+}
+
+#wp-content > .ftr-heading{
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto 10px auto;
+    
+    color: #EAEAEA;
+    font: 30px/100% 'source_sans_prolight';
+}
+
+#wp-content > .ftr-heading > span{
+    width: 110px;
+    height: inherit;
+    display: block;
+    border-bottom: 2px solid #EAEAEA;
+    margin-left: 20px;
+}
+
+#wp-content > .ftr-heading > span > a{
+    color: inherit;
+    text-decoration: none;
+}
+
+#wp-content .vid-row{
+    position: relative;
+    width: auto;
+    height: 260px;
+}
+
+.vid-row .vid-block{
+    position: relative;
+    
+    display: inline-block;
+    vertical-align: middle;
+    
+    width: 316px;
+    height: 260px;
+    
+    margin-left: 20px;
+    
+    z-index: 0;
+    
+    font-family: 'source_sans_proregular';
+}
+
+.vid-block .firstline{
+    width: auto;
+    display: block;
+}
+
+/* controls */
+#wp-content > .wp-c-ctrl{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.wp-c-ctrl > .c-ctrl{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    
+    left: 0;
+}
+
+.c-ctrl > button{
+    position: absolute;
+    width: 90px;
+    height: inherit;
+    top: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.c-ctrl > div:hover{
+    opacity: 1;
+}
+
+.c-ctrl > div:nth-child(1){
+    background: url(../../images/scroll_right.png) no-repeat center center;
+    left: 0;
+}
+
+.c-ctrl > div:nth-child(2){
+    background: url(../../images/scroll_left.png) no-repeat center center;
+    right: 0;
+}
+
+#wp-content .vid-row{
+    margin-bottom: calc(25px * 2);
+}
+
+.vid-block .img-block{
+    position: relative;
+    display: block;
+    margin: auto;
+    
+    width: 316px;
+    height: 178px;
+    
+    box-shadow: 0 3px 8px #000;
+}
+
+.img-block > *{
+    position: absolute;
+}
+
+.img-block > .time{
+    bottom: 4px;
+    right: 5px;
+    
+    width: 56px;
+    height: 22px;
+    
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    
+    background: #1B1B1B;
+    border: 1px solid #363636;
+    border-radius: 3px;
+}
+
+.vid-block .detail-block{
+    position: relative;
+    width: auto;
+    height: 22px;
+    margin-top: 10px;
+}
+
+.detail-block > *{
+    line-height: 22px;
+    height: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    color: #bbb;
+    background: #363636;
+    border: 1px solid #363636;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.detail-block > *:not(:first-child){
+    margin-left: 2px;
+}
+
+.detail-block > .price{
+    width: 102px;
+    margin-left: 1px;
+    background: transparent;
+}
+.detail-block > .price > .price-btc{
+    color:#fff;
+}
+
+.detail-block > .user{
+    width: 174px;
+}
+
+.detail-block > .graph{
+    width: 22px;
+    background: #1b1b1b;
+}
+
+.vid-block .caption-block{
+    margin-top: 10px;
+    color: #bbb;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.vid-block .detail-block + a{
+    text-decoration: none;
+    color: #bbb;
+}
+
+.vid-block .detail-block + a:hover > div{
+    text-decoration: underline !important;
+}
+
+/* graph */
+.graph > .graph-bar{
+    width: 18px;
+    height: 3px;
+    background: #276327;
+    margin-left: 2px;
+}
+
+.graph > .graph-bar:first-child{
+    margin-top: 3px;
+}
+
+.vid-block > div,
+.vid-block > span{
+    width: 316px !important;
+    display: block !important;
+    margin: auto;
+}
+
+.slick-track{
+    margin-left: 20px !important;
+}
+

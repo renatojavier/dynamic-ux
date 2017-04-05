@@ -1,0 +1,601 @@
+@import "../wmb/dist/css/font/stylesheet.css";
+
+body{
+	overflow-y: scroll;
+	background-color: rgb(246, 191, 2);
+}
+
+[data-device] .container .inner{
+	width: 1000px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+/*--
+ - Top bar
+ --*/
+[data-device] #top-bar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	width: 100%;
+	height: 100px;
+
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+	z-index: 99999;
+}
+
+[data-device] #top-bar,
+[data-device] #top-bar{
+    background-color: rgba(246, 191, 2, 0.95);
+}
+
+[data-device] #top-bar > .inner{
+	display: table;
+}
+
+[data-device] #top-bar > .inner > *{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+[data-device] #top-bar a{
+	text-decoration: none;
+}
+
+/*-- site logo group --*/
+[data-device] #top-bar figure#site-logo-group{
+    width: 200px;
+	margin: 0;
+}
+
+[data-device] #top-bar #site-logo-group img{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+[data-device] #top-bar #site-logo-group .fa{
+	color: white;
+    color: white;
+    font-size: 80px;
+    width: 60px;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+[data-device] #top-bar #site-logo-group img#site-logo{
+	margin-left: -10px;
+	border-radius: 100%;
+}
+
+/*-- top-bar portfolio name --*/
+[data-device] #top-bar #portfolio-name{
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+    text-shadow: 0 2px 5px black;
+}
+
+
+/*-- top-bar switcher --*/
+[data-device] .switcher-mobile{
+	display: none;
+}
+
+[data-device] #switcher-inner,
+[data-device] #top-bar #switcher-inner{
+	position: relative;
+    width: 372px;
+    height: 52px;
+    border-radius: 14px;
+    border: 4px solid white;
+    line-height: 45px;
+    font-size: 26px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    float: right;
+}
+
+[data-device] #switcher-inner .active-switch,
+[data-device] #top-bar #switcher-inner .active-switch{
+	background-color: white;
+	color: #f6bf02;
+}
+
+[data-device] #switcher-inner a,
+[data-device] #top-bar #switcher-inner a{
+    display: block;
+    width: 50%;
+    float: left;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+[data-device] #switcher-inner a:first-of-type,
+[data-device] #top-bar #switcher-inner a:first-of-type{
+	border-right: 2px solid white;
+}
+
+[data-device] #switcher-inner a:last-of-type,
+[data-device] #top-bar #switcher-inner a:last-of-type{
+	border-left: 2px solid white;
+}
+
+/*--
+ - Page content
+ --*/
+[data-device] #page-content{
+	background-color: #f6bf02;
+	margin-top: 100px;
+	color: white;
+}
+
+[data-device] #page-content .section{
+	border-bottom: 1px solid #808080;
+	border-top: 1px solid #d6d6d6;
+}
+
+[data-device] #page-content .section > .inner{
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+    padding: 30px 0 60px;
+}
+
+[data-device] #page-content .section-title{
+	font-size: 35px;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+[data-device] #page-content .section-title-centered{
+	font-weight: bold;
+    font-size: 51px;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 40px auto 30px;
+}
+
+[data-device] #page-content .textual-content,
+[data-device] #page-content .textual-content-centered{
+    list-style-type: none;
+    font-size: 25px;
+    line-height: 130%;
+    padding-left: 29px;
+    margin-top: 5px;
+}
+
+[data-device] #page-content .textual-content-centered{
+	text-align: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+[data-device] #page-content .section-diagram{
+	text-align: center;
+	margin: 0;
+}
+
+[data-device] #page-content .section-diagram img{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*-- section alpha --*/
+[data-device] #page-content .section.alpha .section-diagram{
+	margin-top: 40px;
+}
+
+[data-device] #page-content .section.alpha .section-diagram img{
+	vertical-align: top;
+}
+
+[data-device] #page-content .section.alpha .section-diagram #img_a_arrow_blue_right{
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+[data-device] #page-content .section.alpha .textual-content{
+	margin-top: 25px;
+}
+
+[data-device] #page-content .section.alpha .section-diagram #img_a_btc_icon{
+    margin-top: 30px;
+}
+
+/*-- section beta --*/
+[data-device] #page-content .section.beta .inner{
+	padding-top: 40px
+}
+
+[data-device] #page-content .section.beta .diagram-design{
+    margin-bottom: 70px;
+}
+
+[data-device] #page-content .section.beta .diagram-analytics{
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+[data-device] #page-content .section.beta .diagram-design img{
+	margin: 0 20px;
+}
+
+[data-device] #page-content .section.beta .diagram-feedback #img_b_arrow_blue_right{
+	margin: 0 15px;
+}
+
+[data-device] #page-content .section.beta #img_b_wmb_rating_chart{
+    height: 60px;
+    width:  60px;
+}
+[data-device] #page-content .section.beta #img_b_wmb_arrow,
+[data-device] #page-content .section.beta #img_b_wmb_arrow_green,
+[data-device] #page-content .section.beta #img_b_wmb_check{
+	display: block;
+	margin: 0 auto 30px;
+}
+
+[data-device] #page-content .section.beta #animated-arrow{
+	position: relative;
+    width: 414px;
+    height: 10px;
+    margin: 30px auto;
+}
+
+[data-device] #page-content .section.beta #animated-arrow:before,
+[data-device] #page-content .section.beta #animated-arrow:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 10px;
+	background-image: url(../img/wmb_arrow.gif);
+	background-repeat: no-repeat;
+}
+
+[data-device] #page-content .section.beta #animated-arrow:before{
+    width: 20px;
+    right: 0;
+    background-position: 100% 0;
+    z-index: 1;
+}
+
+[data-device] #page-content .section.beta #animated-arrow:after{
+    width: 400px;
+    background-size: 135% 10px;
+    left: 0;
+    z-index: 0;
+}
+
+[data-device] #page-content .section.beta #img_b_wmb_check{
+	margin-bottom: -60px;
+}
+
+/*-- section charlie --*/
+[data-device] #page-content .section.charlie .section-diagram img{
+	display: block;
+	margin: 0 auto;
+}
+
+[data-device] #page-content .section.charlie .section-title-centered{
+	margin-top: 80px;
+}
+
+[data-device] #page-content .section.charlie #img_c_placeholder_wmb_player{
+	margin-top: 50px;
+}
+
+[data-device] #page-content .section.charlie #img_c_wmb_logo{
+	margin-top: 100px;
+    padding-bottom: 200px;
+}
+
+/*--
+ - video player
+ --*/
+#main-video{
+	font: 12pt/120% "source_sans_proregular", Helvetica, Arial, sans-serif;
+}
+
+#trn-msg > *:nth-child(2) {
+	display: inline-block !important;
+    margin-left: 5px !important;
+    margin-bottom: -3px !important;
+    opacity: 0;
+}
+
+.wp-copy .copy-prop-txfd > input{
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.wp-copy .copy-prop-txt{
+    font-family: "source_sans_proregular", Helvetica, Arial, sans-serif;
+}
+
+.wp-copy .copy-prop-txt:nth-of-type(1){
+    line-height: 20px;
+}
+
+/*--
+ - WMB video preview.mp4
+ --*/
+#main-video{
+	position: relative;
+}
+
+#main-video,
+#main-video-overlay{
+	z-index: 2;
+}
+
+#main-video-preview{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+    width: 900px;
+    height: 506px;
+    overflow: hidden;
+}
+
+/*--
+ - CSS hack, only solution that is available:
+ - https://bugs.chromium.org/p/chromium/issues/detail?id=675596&can=2&q=media%20download&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
+ --*/
+#main-video-preview::-internal-media-controls-download-button {
+    display:none !important;
+}
+
+#main-video-preview::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+#main-video-preview::-webkit-media-controls-panel {
+    width: calc(100% + 30px);
+}
+
+[data-device] #alt-video-play,
+[data-device] #alt-video-pause{
+	display: none;
+}
+
+/*--
+ - additional layout
+ --*/
+[data-device] .mockup{
+	opacity: 0.7;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+[data-device] .mockup-desktop{
+	width: 800px;
+	height: 600px;
+	display: none !important;
+}
+
+[data-device] .diagram-visualn{
+	position: relative;
+	margin-top: 0 !important;
+    margin-bottom: 40px !important;
+}
+
+[data-device] #visualn-container{
+	position: relative;
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	clear: both;
+}
+
+[data-device] #visualn-container *:not(br){
+	position: absolute;
+}
+
+/*-- user --*/
+[data-device] .user-thumb{
+	border-radius: 100%;
+}
+
+[data-device] #user-thumb-viewer{
+	top: 55px;
+    left: 336px;
+}
+
+[data-device] #user-thumb-wmb{
+    border-radius: 0;
+    top: 211px;
+    left: 302px;
+}
+
+[data-device] #user-thumb-bob{
+	bottom: 68px;
+    left: 129px;
+}
+
+[data-device] #user-thumb-rob{
+    bottom: 69px;
+    right: 241px;
+}
+
+[data-device] .user-address{
+	color: black;
+	font-size: 17px;
+}
+
+[data-device] #user-address-viewer{
+    top: 45px;
+    left: 375px;
+}
+
+[data-device] #user-address-wmb{
+    top: 202px;
+    left: 391px;
+}
+
+[data-device] #user-address-bob{
+    bottom: 56px;
+    left: 173px;
+}
+
+[data-device] #user-address-rob{
+	bottom: 56px;
+    right: 134px;
+}
+
+/*-- qr --*/
+[data-device] .qr-img{}
+
+[data-device] .qr-aside{
+	color: black;
+	font-size: 13px;
+}
+
+[data-device] #qr-img-1{
+    top: 95px;
+    left: 251px;
+}
+
+[data-device] #qr-img-2{
+    top: 243px;
+    left: 251px;
+}
+
+[data-device] #qr-img-3{
+    bottom: 35px;
+    left: 65px;
+}
+
+[data-device] #qr-img-4{
+    bottom: 35px;
+    right: 323px;
+}
+
+[data-device] #qr-aside-1{
+    top: 92px;
+    left: 289px;
+}
+
+[data-device] #qr-aside-2{
+    top: 240px;
+    left: 289px;
+}
+
+[data-device] #qr-aside-3{
+    bottom: 30px;
+    left: 102px;
+}
+
+[data-device] #qr-aside-4{
+    bottom: 30px;
+    right: 54px;
+}
+
+/*-- data flow description --*/
+[data-device] .df-label{
+	color: black;
+	line-height: 120%;
+	font-size: 17px;
+}
+
+[data-device] #df-label-1{
+    top: 128px;
+    left: 269px;
+    text-align: right;
+}
+
+[data-device] #df-label-2{
+    top: 280px;
+    left: 178px;
+    text-align: right;
+}
+
+[data-device] #df-label-2 br:first-of-type{
+	display: none;
+}
+
+[data-device] #df-label-3{
+    bottom: 106px;
+    left: 380px;
+    text-align: center;
+}
+
+[data-device] .df-arrow{}
+
+[data-device] #df-arrow-down-1{
+	top: 140px;
+    left: 409px;
+}
+
+[data-device] #df-arrow-down-2{
+	top: 287px;
+    left: 409px;
+}
+
+[data-device] #df-arrow-down-3,
+[data-device] #df-arrow-down-4,
+[data-device] #arrow-4-tail{
+	display: none !important;
+}
+
+[data-device] #df-arrow-down-left{
+    bottom: 111px;
+    left: 282px;
+}
+
+[data-device] #df-arrow-down-right{
+    bottom: 111px;
+    right: 263px;
+}
+
+
+[data-device] .df-btc{
+	display: block;
+    background-color: #ffb901;
+    border: 1px solid black;
+    padding: 4px 12px 4px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: helvetica;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	overflow: hidden;
+}
+
+[data-device] #df-btc-1{
+    top: 154px;
+    left: 441px;
+}
+
+[data-device] #df-btc-2{
+    top: 301px;
+    left: 441px;
+}
+
+[data-device] #df-btc-3{
+	bottom: 140px;
+    left: 153px;
+}
+
+[data-device] #df-btc-4{
+    bottom: 140px;
+    right: 121px;
+}
+
+/*-- split --*/
+[data-device] #split-dropdown{
+	top: 362px;
+    left: 272px;
+}
