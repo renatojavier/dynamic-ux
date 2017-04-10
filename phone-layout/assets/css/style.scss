@@ -1,0 +1,166 @@
+@import "partials/_rule";
+
+body{
+	position: relative;
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+
+.container{
+	@extend body;
+	width: 2550px;
+    height: 3300px;
+    background-color: #231f20;
+}
+
+.front-page{
+	.phone{
+		background-image: url(../img/global/phone_print_sample_app_front.png);
+	}
+}
+
+.inner{
+	@extend .container;
+	padding: 57px 0 0 102px;
+}
+
+.phone{
+	position: relative;
+	width: 786px;
+	height: 1592px;
+
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: top left;
+
+	float: left;
+
+	& .comp{
+
+		&.topbar,
+		&.featured{
+			width: $scaled_vp_width+px;
+		}
+
+		&.topbar{
+			top: 196px;
+			height: 108px;
+		}
+
+		&.featured{
+		    top: 304px;
+		    height: 520px;
+		}
+
+		&.contact-button{
+		    bottom: 448px;
+		    right: -145px;
+		    top: auto;
+		    left: auto;
+		    font-family: helvetica;
+		    font-size: 80px;
+		    width: 502px;
+		    text-align: center;
+		    padding: 21px 0 14px 0;
+
+		    background: rgba(150,150,150,1);
+			background: -moz-linear-gradient(left, rgba(150,150,150,1) 0%, rgba(179,179,179,1) 100%);
+			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(150,150,150,1)), color-stop(100%, rgba(179,179,179,1)));
+			background: -webkit-linear-gradient(left, rgba(150,150,150,1) 0%, rgba(179,179,179,1) 100%);
+			background: -o-linear-gradient(left, rgba(150,150,150,1) 0%, rgba(179,179,179,1) 100%);
+			background: -ms-linear-gradient(left, rgba(150,150,150,1) 0%, rgba(179,179,179,1) 100%);
+			background: linear-gradient(to right, rgba(150,150,150,1) 0%, rgba(179,179,179,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', endColorstr='#b3b3b3', GradientType=1 );
+		}
+
+		&.toolbar{
+	    	bottom: 195px;
+		    top: auto;
+		    width: 690px;
+		    height: 108px;
+		}
+
+		@include center(x, 0, 0);
+	}
+
+	&.phone_1{
+		& .toolbar{
+			background-color: #005439;
+		}
+	}
+
+	&.phone_2{
+		& .toolbar{
+			background-color: #4e2d1a;
+		}
+	}
+
+	&.phone_3{
+		& .toolbar{
+			background-color: #2b658e;
+		}
+	}
+
+	&.phone_4{
+		& .toolbar{
+			background-color: #b0b0b0;
+		}
+	}
+
+	&.phone_5{
+		& .toolbar{
+			background-color: #121212;
+		}
+	}
+
+	&.phone_6{
+		& .toolbar{
+			background-color: #a44534;
+		}
+	}
+
+}
+
+/*-- back page's component --*/
+.back-page{}
+
+.back-page .phone{
+	background-color: #9e9fa5;
+	background-image: url(../img/global/phone_print_sample_app_back.png);
+
+	& .code{
+		position: absolute;
+		width: 100%;
+	    bottom: 49px;
+		text-align: center;
+		margin-left: -12px;
+		color: #ff0099;
+		font-family: helvetica;
+    	font-size: 34px;
+    	font-weight: bold;
+	}
+
+	&:before,
+	&:after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 30px;
+		left: 0;
+		background-color: #595959;
+	}
+
+	&:before{
+		top: 224px;
+	}
+
+	&:after{
+		/*-- top: 1480px will run over the white box --*/
+		bottom: 138px; 
+	}
+}
+
+
+
+ 

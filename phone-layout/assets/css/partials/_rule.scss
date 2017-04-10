@@ -1,0 +1,30 @@
+$base_vp_width: 640;
+$scaled_vp_width: 690;
+$scale: scale($base_vp_width, $scaled_vp_width);
+
+@mixin center( $dim, $offsetX, $offsetY ){
+	position: absolute;
+	@if $dim == y {
+		top : 50%;
+		left: 0;
+		@include prefix(transform, translate(0%, -50%));
+	}@else{ 
+		top : 0;
+		left: 50%;
+		@include prefix(transform, translate(-50%, 0%));
+	}
+
+	margin-top: $offsetY;
+	margin-left: $offsetX;
+	
+}
+
+@mixin prefix( $property, $value ){
+	@each $prefixes in -webkit-, -moz-, -o-, null{
+		#{$prefixes}#{$property}: $value;
+	}
+}
+
+@function scale($n, $d){
+	@return $n / $d;
+}
