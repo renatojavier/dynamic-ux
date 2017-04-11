@@ -1,6 +1,10 @@
 $base_vp_width: 640;
 $scaled_vp_width: 690;
 $scale: scale($base_vp_width, $scaled_vp_width);
+$global_top_offset: 57px;
+$global_left_offset: 102px;
+$line_1_offset_ftop: 224px;
+$line_2_offset_fbottom: 138px;
 
 @mixin center( $dim, $offsetX, $offsetY ){
 	position: absolute;

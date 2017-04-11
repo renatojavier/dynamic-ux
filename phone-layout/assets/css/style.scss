@@ -21,7 +21,7 @@ body{
 
 .inner{
 	@extend .container;
-	padding: 57px 0 0 102px;
+	padding: $global_top_offset 0 0 $global_top_offset;
 }
 
 .phone{
@@ -45,6 +45,8 @@ body{
 		&.topbar{
 			top: 196px;
 			height: 108px;
+		    @include prefix(box-shadow, 0 0 6px rgba(0, 0, 0, 0.6));
+    		z-index: 100;
 		}
 
 		&.featured{
@@ -143,14 +145,50 @@ body{
 	}
 
 	&:before{
-		top: 224px;
+		top: $line_1_offset_ftop;
 	}
 
 	&:after{
 		/*-- top: 1480px will run over the white box --*/
-		bottom: 138px; 
+		bottom: $line_2_offset_fbottom; 
 	}
 }
+
+.lines-container{
+	position: absolute;
+	width: 100%;
+	height: 3300px;
+    top: $global_top_offset;    
+	left: 0;
+
+	.row-line{
+		position: relative;
+		width: inherit;
+		height: 1592px;
+		display: block;
+
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 30px;
+			left: 0;
+			background-color: #595959;
+		}
+
+		&:before{
+			top: $line_1_offset_ftop;
+		}
+
+		&:after{
+			/*-- top: 1480px will run over the white box --*/
+			bottom: $line_2_offset_fbottom; 
+		}
+	}
+
+
+}	
 
 
 
