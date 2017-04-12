@@ -124,7 +124,7 @@ $(window).scroll(function(){
   windowScrolled();
 });
 
-$(window).load(function()
+$(window).on('load', function()
 {
 //$("#content:hidden, div.contentArea:hidden, #footerSpacer:hidden").each(function()
 $fadeInList.each(function()

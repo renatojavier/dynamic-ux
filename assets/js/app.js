@@ -6,7 +6,7 @@ window.app = {
 		window.app.wmbPlaybackOnce = true;
 		window.preload_flag = true;
 
-		this.loadMozCSS();
+		console.log('window.app.initialize');
 		this.counterFOUC();
 
 		this.wmbStartMainVideo();
@@ -91,13 +91,21 @@ window.app = {
 
 				TweenLite.set('html, body', {
 					height: 'auto'
-				});		
+				});	
+
+				if( (window.navigator.userAgent).match(/(F|f)irefox/) ){
+					TweenLite.set('#viewport', {
+						marginBottom: 'auto'
+					});	
+				}	
 					
 			}else if( self.vw > self.breakpoint['mobile'] && self.vw <= self.breakpoint['tablet'] ){
 				document.querySelector('html').setAttribute('data-device', 'desktop');
 				document.querySelector('html').setAttribute('data-responsive', '0');
 
 				self.scale = $(window).width() / self.breakpoint['tablet'];
+
+				var h = self.scale * document.getElementById('viewport').clientHeight;
 
 				TweenLite.set('#top-bar, #viewport', {
 					scale: self.scale,
@@ -115,8 +123,16 @@ window.app = {
 				});
 
 				TweenLite.set('html, body', {
-					height: self.scale * document.body.clientHeight
-				});			
+					height: h
+				});
+
+				if( (window.navigator.userAgent).match(/(F|f)irefox/) ){
+					TweenLite.set('#viewport', {
+						delay: 0.2,
+						marginBottom: (-1*h)
+					});	
+				}
+
 			}else{
 				document.querySelector('html').setAttribute('data-device', 'desktop');
 				document.querySelector('html').setAttribute('data-responsive', '0');
@@ -145,7 +161,18 @@ window.app = {
 					height: 'auto'
 				});
 
+				if( (window.navigator.userAgent).match(/(F|f)irefox/) ){
+					TweenLite.set('#viewport', {
+						marginBottom: 'auto'
+					});	
+				}
+
 			}
+
+			TweenLite.set('.fixed-element-container', {
+				transform: $('#top-bar').css('transform'),
+				width: $('#top-bar').css('width')
+			});
 			
 		}
 
@@ -337,7 +364,7 @@ window.app = {
 				window.app.breakpoints['complex'] = ( $('#section-complex').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
 				window.app.breakpoints['simple'] = ( $('#section-simple').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
 
-				return false;
+				// return false;
 			}).trigger('resize');
 
 			function optimizedScroll( y ){
