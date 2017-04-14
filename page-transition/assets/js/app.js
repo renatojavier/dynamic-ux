@@ -3,11 +3,10 @@ window.app = {
 	ua : window.navigator.userAgent,
 
 	initialize : function(){
-		console.log('read.');
 		window.app.wmbPlaybackOnce = true;
 		window.preload_flag = true;
 
-		this.loadMozCSS();
+		// console.log('window.app.initialize');
 		this.counterFOUC();
 
 		this.wmbStartMainVideo();
@@ -169,6 +168,11 @@ window.app = {
 				}
 
 			}
+
+			TweenLite.set('.fixed-element-container', {
+				transform: $('#top-bar').css('transform'),
+				width: $('#top-bar').css('width')
+			});
 			
 		}
 
@@ -268,8 +272,8 @@ window.app = {
 	},
 
 	loadMozCSS : function(){
-		if( window.__device.phone() === null && document.getElementById('moz-stylesheet') !== null )
-			$('head').append('<link id="moz-stylesheet" rel="stylesheet" type="text/css" href="assets/css/moz.css">');
+		if( window.__device.phone() === null )
+			$('head').append('<link rel="stylesheet" type="text/css" href="assets/css/moz.css">');
 	},
 
 	/*--
@@ -360,7 +364,7 @@ window.app = {
 				window.app.breakpoints['complex'] = ( $('#section-complex').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
 				window.app.breakpoints['simple'] = ( $('#section-simple').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
 
-				return false;
+				// return false;
 			}).trigger('resize');
 
 			function optimizedScroll( y ){
@@ -427,3 +431,7 @@ window.app = {
 
 	}
 };
+
+window.addEventListener('load', function(){
+	this.app.initialize();
+}, false );
