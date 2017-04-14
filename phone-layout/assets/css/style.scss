@@ -54,6 +54,30 @@ body{
 		    height: 520px;
 		}
 
+		&.nav-bullet-container{
+			top: (304+520) - (30+25)+px;
+			width: (30 * 2) + (30 + (40*2))+px;
+			height: 30px;
+
+			.nav-bullet{
+				width: 30px;
+				height: inherit;
+				border-radius: 100%;
+				display: block;
+				float: left;
+
+				&:nth-of-type(2){
+					margin: 0 40px;
+				}
+
+				&:not(.nav-bullet-active){
+					opacity: 0.8;
+					background-color: white;
+				}
+
+			}
+		}
+
 		&.contact-button{
 		    bottom: 448px;
 		    right: -145px;
@@ -72,43 +96,50 @@ body{
 		    top: auto;
 		    width: 690px;
 		    height: 108px;
+		    @include prefix(box-shadow, 0 -2px 6px rgba(0, 0, 0, 0.6));
 		}
 
 		@include center(x, 0, 0);
 	}
 
 	&.phone_1{
-		& .toolbar{
+		& .toolbar,
+		& .nav-bullet-container .nav-bullet-active{
 			background-color: #005439;
 		}
 	}
 
 	&.phone_2{
-		& .toolbar{
+		& .toolbar,
+		& .nav-bullet-container .nav-bullet-active{
 			background-color: #4e2d1a;
 		}
 	}
 
 	&.phone_3{
-		& .toolbar{
+		& .toolbar,
+		& .nav-bullet-container .nav-bullet-active{
 			background-color: #2b658e;
 		}
 	}
 
 	&.phone_4{
-		& .toolbar{
+		& .toolbar,
+		& .nav-bullet-container .nav-bullet-active{
 			background-color: #b0b0b0;
 		}
 	}
 
 	&.phone_5{
-		& .toolbar{
+		& .toolbar,
+		& .nav-bullet-container .nav-bullet-active{
 			background-color: #121212;
 		}
 	}
 
 	&.phone_6{
-		& .toolbar{
+		& .toolbar,
+		& .nav-bullet-container .nav-bullet-active{
 			background-color: #a44534;
 		}
 	}
