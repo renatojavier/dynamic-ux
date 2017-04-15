@@ -418,4 +418,7 @@
     
     window.addEventListener('load', function(){ v.init(); }, false);
 
+    if( typeof window.wmb.playback.play === 'undefined' )
+    	v.init();
+    
 })(jQuery, window.wmb.videoScript);

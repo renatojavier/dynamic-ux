@@ -1,9 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 	var lastScrollPosition = 0
-	,	direction;
+	,	direction
+	,	phomio_page = Barba.BaseView.extend({
+			namespace: 'phomio',
+			onEnterCompleted: function() {
+				$.when(
+					$.getScript('assets/phomio/js/jquery.color-2.1.2.min.js'),
+					$.getScript('assets/phomio/js/jquery.ba-throttle-debounce-1.1.min.js'),
+					$.getScript('assets/phomio/js/lureSelect.js'),
+					$.getScript('assets/phomio/js/portfolio.js')
+				)
+				.done(function(response){
+					console.info('PHOMIO_PAGE: scripts loaded');
+				})
+				.fail(function(){
+					console.error('PHOMIO_PAGE: all or some scripts are not loaded');
+				});
+				
+			}
+		})
+	,	wmb_page = Barba.BaseView.extend({
+			namespace: 'wmb',
+			onEnterCompleted: function() {
+				$.when(
+					$.getScript('assets/js/wmb.meta.js'),
+					$.getScript('assets/wmb/dist/js/video.js')
+				)
+				.done(function(response){
+					console.info('WMB_PAGE: scripts loaded');
+				})
+				.fail(function(){
+					console.error('WMB_PAGE: all or some scripts are not loaded');
+				});
+				
+			}
+		})
+	;
 
-	// phomio_page.init();
+	phomio_page.init();
+	wmb_page.init();
+
 	Barba.Pjax.init();
     Barba.Prefetch.init();
 
@@ -58,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     			}
     		});
 
-    		t = 0.9 * 3;
+    		t = 0.9 * 1;
 
     		timeline
     		.set( $(self.newContainer), {
@@ -75,14 +112,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 top: -1 * window.scrollY,
                 right: 0
     		})
-    		.set( $(self.newContainer).find('#top-bar'), {
+    		.set( $(self.newContainer).find('#top-bar').find('.animate-cross-fade'), {
     			autoAlpha: 0
     		})
     		.set( $(self.oldContainer).find('#top-bar'), {
     			position: 'fixed',
-    			top: ( $(window).width() >= 1000 ) ? $(self.oldContainer).offset().top * -1 : window.scrollY
+    			top: ( $(window).width() >= 1000 || $('[data-device=mobile]').length ) ? $(self.oldContainer).offset().top * -1 : window.scrollY
+    		})
+    		.set( $(self.oldContainer).find('.switcher-mobile'), {
+    			position: 'fixed',
+    			top: ( $('[data-device=mobile]').length ) ? ( $(self.oldContainer).offset().top * -1 ) + $(self.oldContainer).find('#top-bar').height() : 'auto'
     		})
     		
+    		/*-- page-content containers translate --*/
     		.to( $(self.oldContainer), t, {
     			xPercent : ( direction == 'move_to_left' ) ? 100 : -100,
     			ease: Expo.easeInOut
@@ -99,12 +141,18 @@ document.addEventListener("DOMContentLoaded", function() {
     			}
     		}, 0)
 
-    		/*-- top-bars cross-fade --*/
+    		/*-- outgoing topbar changes BG --*/
     		.to( $(self.oldContainer).find('#top-bar'), t - 0.2 , {
-    			autoAlpha: 0
+    			backgroundColor: $(self.newContainer).find('#top-bar').css('background-color')
     		}, 0)
-    		.to( $(self.newContainer).find('#top-bar'), t, {
+
+    		/*-- cross fade top-bar elements --*/
+    		.to( $(self.newContainer).find('#top-bar').find('.animate-cross-fade'), t, {
+    			delay: 0.6,
     			autoAlpha: 1
+    		}, 0)
+			.to( $(self.oldContainer).find('#top-bar').find('.animate-cross-fade'), t, {
+    			autoAlpha: 0
     		}, 0)
 
     		/*-- logo translation --*/
@@ -146,25 +194,3 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
 });
-
-	/*
-	var phomio_page = Barba.BaseView.extend({
-		namespace: 'phomio',
-		onEnterCompleted: function() {
-
-			$.when(
-				$.getScript('assets/phomio/js/jquery.color-2.1.2.min.js'),
-				$.getScript('assets/phomio/js/jquery.ba-throttle-debounce-1.1.min.js'),
-				$.getScript('assets/phomio/js/lureSelect.js'),
-				$.getScript('assets/phomio/js/portfolio.js'),
-				$.getScript('assets/js/foo.js')
-			)
-			.done(function(response){
-				
-			})
-			.fail(function(){
-				console.warn('scripts not loaded');
-			});
-			
-		}
-	});*/

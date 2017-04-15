@@ -124,8 +124,8 @@ $(window).scroll(function(){
   windowScrolled();
 });
 
-$(window).on('load', function()
-{
+//$(window).on('load', function()
+//{
 //$("#content:hidden, div.contentArea:hidden, #footerSpacer:hidden").each(function()
 $fadeInList.each(function()
   {
@@ -154,7 +154,7 @@ $("#loadingGear").hide();
       //$(window).scrollTop( $("#label-Items").offset().top );
       }
     });
-});
+//});
 
 /*
 
