@@ -1,0 +1,75 @@
+/*--
+ - Moz specific styling
+ --*/
+@-moz-document url-prefix(){
+	/*--
+	 - Index Page
+	 --*/
+	[data-device] #top-bar figure#site-logo-group > a{
+		display: inline-block;
+	/*--	margin-top: 5px;  --*/
+	}
+
+	[data-device] #portfolio-container .portfolio .column-text .cta-more-info{
+		line-height: 44px;
+	}
+
+	[data-device] #top-bar h3{
+		padding-top: 4px;
+	}
+
+	[data-device="mobile"] #top-bar #site-logo-group img#site-logo{
+		/*margin-top: -3px;*/
+	}
+
+	/*-- wmb --*/
+	[data-device] #user-address-viewer{
+		top: 43px;
+	}
+
+	[data-device] #qr-aside-1{
+		top: 90px;
+	}
+
+	[data-device] #qr-aside-2 {
+    	top: 239px;
+    }
+
+	[data-device] #user-address-wmb {
+    	top: 200px;
+   	}
+
+   	[data-device] #df-label-2 {
+    	top: 279px;
+    }
+
+    [data-device] #qr-aside-4 {
+    	right: 58px;
+	}
+
+	[data-device="mobile"] #user-address-viewer {
+	    top: 11px;
+	}
+
+	[data-device="mobile"] #qr-aside-1 {
+	    top: 46px;
+	}
+
+	[data-device="mobile"] #df-label-1 {
+	    top: 74px;
+	    left: 52px;
+	}
+
+	[data-device="mobile"] #qr-aside-2 {
+    	top: 163px;
+    }
+
+    [data-device="mobile"] #df-label-2 {
+	    top: 181px;
+	}
+
+	[data-device="mobile"] #qr-aside-4{
+		right: 29px;
+	}
+
+}
