@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
     			}
     		});
 
-    		t = 0.9;
+    		t = 0.9 * 3;
 
     		timeline
     		.set( $(self.newContainer), {
