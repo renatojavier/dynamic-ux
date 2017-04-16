@@ -91,13 +91,21 @@ document.addEventListener("DOMContentLoaded", function() {
     				document.querySelector('html').setAttribute( 'data-portfolio', $(self.newContainer).find('[data-view]').data('view') );
     			},
     			onComplete : function(){
-    				self.done();
+                    TweenLite.set('body', {
+                        backgroundColor: 'white',
+                        onComplete: function(){
+                            self.done();
+                        }
+                    });
     			}
     		});
 
     		t = 0.9 * 1;
 
     		timeline
+            .set( 'body', {
+                backgroundColor: $(self.oldContainer).data('theme')
+            })
     		.set( $(self.newContainer), {
     			xPercent : ( direction == 'move_to_left' ) ? -100 : 100,
     			autoAlpha: 1,
@@ -112,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 top: -1 * window.scrollY,
                 right: 0
     		})
+            .set( $(self.newContainer).find('#top-bar'), {
+                backgroundColor: $(self.oldContainer).data('theme')
+            })
     		.set( $(self.newContainer).find('#top-bar').find('.animate-cross-fade'), {
     			autoAlpha: 0
     		})
@@ -124,6 +135,10 @@ document.addEventListener("DOMContentLoaded", function() {
     			top: ( $('[data-device=mobile]').length ) ? ( $(self.oldContainer).offset().top * -1 ) + $(self.oldContainer).find('#top-bar').height() : 'auto'
     		})
     		
+
+            .to( 'body', t, {
+                backgroundColor: $(self.newContainer).data('theme')
+            })
     		/*-- page-content containers translate --*/
     		.to( $(self.oldContainer), t, {
     			xPercent : ( direction == 'move_to_left' ) ? 100 : -100,
@@ -141,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function() {
     			}
     		}, 0)
 
-    		/*-- outgoing topbar changes BG --*/
-    		.to( $(self.oldContainer).find('#top-bar'), t - 0.2 , {
-    			backgroundColor: $(self.newContainer).find('#top-bar').css('background-color')
+    		/*-- topbars change BG --*/
+    		.to( [$(self.oldContainer).find('#top-bar'), $(self.newContainer).find('#top-bar')], t - 0.2 , {
+    			backgroundColor: $(self.newContainer).data('theme')
     		}, 0)
 
     		/*-- cross fade top-bar elements --*/
