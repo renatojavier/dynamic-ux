@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function() {
     			top: ( $('[data-device=mobile]').length ) ? ( $(self.oldContainer).offset().top * -1 ) + $(self.oldContainer).find('#top-bar').height() : 'auto'
     		})
     		
-
             .to( 'body', t, {
                 backgroundColor: $(self.newContainer).data('theme')
             })
@@ -175,7 +174,6 @@ document.addEventListener("DOMContentLoaded", function() {
     			delay: 0.3,
     			autoAlpha: ( direction == 'move_to_left') ? 0 : 1
     		}, 0)
-
     		;
 
     	},

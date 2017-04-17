@@ -250,6 +250,19 @@ h1, h2, h3, h4, h5, h6, p, a, li{
 	margin-left: -40px;
 }
 
+#barba-wrapper{
+	width: 100%;
+	height: inherit;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
 .barba-container{
 	overflow: hidden;
+	height: inherit;
 }
