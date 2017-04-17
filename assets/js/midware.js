@@ -128,11 +128,11 @@ document.addEventListener("DOMContentLoaded", function() {
     		})
     		.set( $(self.oldContainer).find('#top-bar'), {
     			position: 'fixed',
-    			top: ( $(window).width() >= 1000 || $('[data-device=mobile]').length ) ? $(self.oldContainer).offset().top * -1 : window.scrollY
+    			top: ( $(window).width() >= 1000 || $('[data-os=android]').length ) ? $(self.oldContainer).offset().top * -1 : window.scrollY
     		})
     		.set( $(self.oldContainer).find('.switcher-mobile'), {
     			position: 'fixed',
-    			top: ( $('[data-device=mobile]').length ) ? ( $(self.oldContainer).offset().top * -1 ) + $(self.oldContainer).find('#top-bar').height() : 'auto'
+    			top: ( $('[data-device=mobile]').length ) ? ( ( $('[data-os=android]').length ) ? $(self.oldContainer).offset().top * -1 : window.scrollY ) + 50 : 'auto'
     		})
     		
             .to( 'body', t, {
