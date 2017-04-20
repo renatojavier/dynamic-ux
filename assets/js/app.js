@@ -360,9 +360,11 @@ window.app = {
 				window.app.hgt_topbar = $('#top-bar').height() + 1;
 				window.app.hgt_m_switcher = ( window.__device.phone() === null ) ? 0 : $('.switcher-mobile').height() + 10;
 
-				window.app.breakpoints['challenge'] = ( $('#section-challenge').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
-				window.app.breakpoints['complex'] = ( $('#section-complex').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
-				window.app.breakpoints['simple'] = ( $('#section-simple').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
+				if( !$('[data-view=index]').length ){
+					window.app.breakpoints['challenge'] = ( $('#section-challenge').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
+					window.app.breakpoints['complex'] = ( $('#section-complex').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
+					window.app.breakpoints['simple'] = ( $('#section-simple').offset().top - ( ( window.app.hgt_topbar * window.app.cal ) + ( window.app.hgt_m_switcher * window.app.cal ) ) );
+				}
 
 				// return false;
 			}).trigger('resize');

@@ -55,33 +55,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     	top : function( self ){
     		self = this;
-
     		var deferred = Barba.Utils.deferred();
-    		// window.scrollTo(0, $(window).scrollTop() );
-    		deferred.resolve();
-    		return deferred.promise;
-    	},
 
-    	scrollTop: function() {
-			var deferred = Barba.Utils.deferred();
-			var obj = { y: window.pageYOffset };
-
-			TweenLite.to(obj, 0.5, {
-				y: 0,
-				onUpdate: function() {
-					if (obj.y === 0) {
+    		if( $('[data-os=ios]').length ){
+    			TweenMax.to(window, 0.5, {
+					scrollTo: 0,
+					onComplete: function(){
 						deferred.resolve();
 					}
+				});
+    		}else{
+    			deferred.resolve();
+    		}
 
-					window.scroll(0, obj.y);
-				},
-				onComplete: function() {
-					deferred.resolve();
-				}
-			});
-
-			return deferred.promise;
-		},
+    		return deferred.promise;
+    	},
 
     	animate : function( self, timeline, t ){
     		self = this;
