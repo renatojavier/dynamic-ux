@@ -1,0 +1,132 @@
+$topbar_height: 50px;
+$topbar_color: white;
+$topbar_bxs: 0 1px 3px black;
+
+$dummy_scrollable_height: 2000px;
+
+@import '_mod';
+
+html,
+body{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	clear: both;
+	float: none;
+	background-color: #ccc;
+	font-family: arial;
+}
+
+a{
+	text-decoration: none;
+	color: #009688;
+}
+
+body{
+	min-height: $dummy_scrollable_height;
+}
+
+.fixed-topbar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: $topbar_height;
+	z-index: 99999;
+
+	.topbar-shape{
+	    position: fixed;
+	    top: -308px;
+	    left: 50%;
+	    width: 5000px;
+	    -webkit-transform: translateX(-50%);
+	    transform: translateX(-50%);
+	    overflow: visible;
+	    z-index: 1;
+
+	    path{
+	    	fill: #FFFFFF !important;
+	    	opacity:0.8;
+	    	fill-opacity:1;
+	    	stroke-width:0;
+	    	stroke-miterlimit:4;
+	    	stroke-dasharray:none;
+	    	filter:url(#filter4692);
+	    }
+	}
+
+	.topbar-logo{
+		position: fixed;
+		display: block;
+		top: 45px;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		z-index: 3;
+	    font-size: 40px;
+	    font-weight: 700;
+	    width: 70px;
+	    height: 70px;
+	    border-radius: 100%;
+	    background-color: rgba(221, 213, 178, 0.59);
+	    text-align: center;
+	    line-height: 70px;
+	}
+
+	.topbar-content{
+		position: fixed;
+		width: 100%;
+		height: $topbar_height;
+		top: 0;
+		left: 0;
+		z-index: 2;
+
+		& nav{
+			position: relative;
+			width: 1024px;
+			margin: 0 auto;
+
+			@media (max-width: 1023px){
+				width: 100%;
+			}
+
+			.nav-inner{
+				width: 50%;
+				float: left;
+				box-sizing: border-box;
+
+				&.nav-left{
+					text-align: right;
+					padding-right: $topbar_height;
+				}
+
+				&.nav-right{
+					padding-left: $topbar_height;
+				}
+
+			}
+
+			a{
+				display: inline-block;
+				padding: 17px 20px;
+				text-transform: uppercase;
+				font-size: 14px;
+
+				&:hover{
+				    background-color: #ebe6d0;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+.page-content{
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background: url(//images.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg?w=940&h=650&auto=compress&cs=tinysrgb) no-repeat 0 0 / 100% auto;
+}
