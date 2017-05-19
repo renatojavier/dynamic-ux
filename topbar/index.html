@@ -32,20 +32,23 @@
 					     in="flood" />
 					  <feGaussianBlur
 					     id="feGaussianBlur4686"
-					     result="blur"
+					     result="blurOut"
 					     stdDeviation="2"
-					     in="composite1" />
+					     in="offOut" />
 					  <feOffset
 					     id="feOffset4688"
-					     result="offset"
+					     result="offOut"
 					     dy="1"
-					     dx="0" />
+					     dx="0"
+					     in="SourceAlpha" />
 					  <feComposite
 					     id="feComposite4690"
 					     result="composite2"
 					     operator="over"
 					     in2="offset"
 					     in="SourceGraphic" />
+				      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+				    
 					</filter>
 				</defs>
 
