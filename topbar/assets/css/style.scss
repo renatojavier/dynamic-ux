@@ -49,14 +49,12 @@ body{
 	    overflow: visible;
 	    z-index: 1;
 
+	    -webkit-filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+	    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.5));
+
 	    path{
 	    	fill: #FFFFFF !important;
-	    	opacity:0.8;
-	    	fill-opacity:1;
-	    	stroke-width:0;
-	    	stroke-miterlimit:4;
-	    	stroke-dasharray:none;
-	    	filter:url(#filter4692);
+	    	fill-opacity: 0.8;
 	    }
 	}
 
